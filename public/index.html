@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="iNeedTreez">
+<head>
+    <!-- ==================================Common CSS======================================================= -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="src/css/font-awesome.css" />
+    <link rel="stylesheet" href="src/css/bootstrap.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/mapbox.css" />
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>    
+    <link href="admin/assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="admin/assets/plugins/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="admin/assets/css/style-responsive.css" rel="stylesheet" />
+    <link href="bower_components/datatables/media/css/jquery.dataTables.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bower_components/angular-vidbg/dist/vidBg.css">
+    <link rel="stylesheet" href="admin/assets/css/animate.min.css">
+    <link rel="stylesheet" href="bower_components/swipebox/src/css/swipebox.css">
+    <title>iNeedTreez</title>
+    <!-- ===============================End of Common CSS=================================================== -->
+
+</head>
+
+<body>
+
+    <div class="ui-view main-ui-view">
+        <!-- UI ROUTER TEMPLATES INSERTED HERE -->
+    </div>
+
+    <!-- Libs -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places,geometry"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="bower_components/flexslider/jquery.flexslider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="bower_components/angular-css/angular-css.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="bower_components/angular-flexslider/angular-flexslider.js"></script>
+    <script src="scripts/vendor/basejs/jquery.prettyPhoto.js"></script>
+    <script src="scripts/vendor/mapbox/mapbox.js"></script>
+    <script src="bower_components/angular-autocomplete/angular.autocomplete.js"></script>
+    <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
+    <script src="bower_components/angular-vidbg/dist/vidBg.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    <script src="admin/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="bower_components/swipebox/src/js/jquery.swipebox.js"></script>
+
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<script type="text/javascript">
+  // This identifies your website in the createToken call below
+  Stripe.setPublishableKey('pk_test_gJlAKZUWbOh6gltHrPMNXELu');
+  // ...
+</script>
+
+<script src='bower_components/angular-file-model/angular-file-model.js'></script>
+
+
+
+<!--        <script src="admin/assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+
+    <script src="admin/assets/js/form-wizards.demo.min.js"></script> -->
+<!-- 
+
+   <script src="admin/assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="admin/assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+   <script src="admin/assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+    <script src="admin/assets/js/apps.js"></script> -->
+
+    <!-- Application Files -->
+
+    <!-- <script src="build/js/app.min.js"></script> -->
+    <script src="src/js/app/application.js"></script>
+    <script src="src/js/app/application.routes.js"></script>
+    <script src="src/js/app/application.run.js"></script>
+     
+     <!-- Shared -->
+    <script src="src/js/app/shared/constants/GlobalAPI.js"></script>
+    <script src="src/js/app/shared/constants/packages.js"></script>
+    <script src="src/js/app/shared/services/APIService.js"></script>
+    <script src="src/js/app/shared/services/AuthInterceptorService.js"></script>
+    <script src="src/js/app/shared/services/AuthService.js"></script>
+    <script src="src/js/app/shared/services/MapService.js"></script>
+    <script src="src/js/app/shared/services/SessionService.js"></script>
+    <script src="src/js/app/shared/services/UserService.js"></script>
+    <script src="src/js/app/shared/directives/addOverFlow.js"></script>
+    <script src="src/js/app/shared/directives/activateSwipeBox.js"></script>
+    <script src="src/js/app/shared/directives/activateMap.js"></script>
+    <script src="src/js/app/shared/directives/previewImage.js"></script>
+    <script src="src/js/app/shared/directives/login.js"></script>
+    <script src="src/js/app/shared/directives/register.js"></script>
+    <script src="src/js/app/shared/filters/businessCategories.js"></script>
+    <script src="src/js/app/shared/filters/businessSubCategories.js"></script>
+
+    <!-- Main Section -->
+    <script src="src/js/app/home/activateBrickEffect.directive.js"></script>
+    <script src="src/js/app/home/activateTestimonial.directive.js"></script>
+    <script src="src/js/app/home/home.controller.js"></script>
+    <script src="src/js/app/search/search.controller.js"></script>
+    <script src="src/js/app/register/register.controller.js"></script>
+    <script src="src/js/app/login/login.controller.js"></script>
+    <script src="src/js/app/profile/profile.controller.js"></script>
+    <script src="src/js/app/profile/profile.menu.directive.js"></script>
+    <script src="src/js/app/profile/profile.menutoggle.directive.js"></script>
+
+    <!-- Admin Section -->
+    <script src="src/js/app/admin/admin.controller.js"></script>
+    <script src="src/js/app/admin/businesses/admin.businesses.controller.js"></script>
+    <script src="src/js/app/admin/messages/admin.message.controller.js"></script>
+    <script src="src/js/app/admin/contacts/admin.contact.controller.js"></script>
+    <script src="src/js/app/admin/contacts/editContactModal.directive.js"></script>
+    <script src="src/js/app/admin/contacts/addContactModal.directive.js"></script>
+    <script src="src/js/app/admin/businesses/businessInfo/admin.businessInfo.controller.js"></script>
+    <script src="src/js/app/admin/businesses/businessInfo/businessHourInfo.directive.js"></script>
+    <script src="src/js/app/admin/businesses/menus/admin.businessMenu.controller.js"></script>
+    <script src="src/js/app/admin/businesses/ads/admin.BusinessAds.controller.js"></script>
+    <script src="src/js/app/admin/subscriptions/admin.packages.controller.js"></script>
+    <script src="src/js/app/admin/activateSideBarMenu.directive.js"></script>
+    <script src="src/js/app/admin/activateSideBarToggle.directive.js"></script>
+
+
+
+</body>
+</html>

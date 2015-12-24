@@ -1,0 +1,263 @@
+
+<style>
+    .pages,.prev, .next{width: 25px;text-align: center;background: #222222; color:#fff;border: 2px solid #ccc;float:left; margin-right: 5px;cursor: pointer;}
+    .prev, .next{width:40px;float: left;}
+    #itemContainer{width:180px; height: 24px; overflow-y: auto; float: left;}
+    .pages.active{  background: #ccc;border: 2px solid #777;color: #000;}
+    .loader{position:absolute;width: 100%; height: 350px; background: #fff; opacity: 0.5;z-index: 1000;display: none;}
+    .results_container{position: relative;}
+    .search_result, .pagination_btns, .loader{width: 100%;height: 100%;top: 0;left: 0;}
+    .search_scrn:hover{cursor: pointer;}
+    .gm-style .gm-style-iw {color: #000;}
+
+    #coordinates{display:none;}
+    .inner_page .search_left {
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    /*    .fliter_bar li input {width: 150px;}
+        .fliter_bar li select {width: 110px;}*/
+    @media only screen and (min-width: 768px) and (max-width:994px){
+        .fliter_bar li input {width: 185px;}
+        .fliter_bar li select {width: 185px;margin-bottom: 15px;}
+    }
+    @media only screen and (max-width:767px){
+        .fliter_bar li input {width: 100%;}
+        .fliter_bar li select {width: 100%;}
+    }
+    @-moz-document url-prefix() {
+        #itemContainer{width:196px;} 
+    }
+        .entry_boxes {
+              margin-top: 5px !important;
+}
+</style>
+
+<div class="template_header">
+
+</div>
+
+
+
+<div class="main inner_page">
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 search_left" style="padding-right: 0px;">
+        <div class="slider_search">
+            <section class="slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="images/slide1.jpg" /> 
+                            <div class="top_bar">
+            <div class="profile_image col-lg-2 col-md-2 col-md-2 col-xs-12">
+                <a href="#"><img src="images/original.jpg"></a>
+            </div>
+            <div class="col-lg-10 col-md-10 col-md-10 col-xs-12 ">
+                <h5>YOUR OWN WARM ROOM at L.E.S.</h5>
+            </div>
+        </div>
+                        </li>
+                        <li> 
+                            <img src="images/slide1.jpg" /> 
+                            <div class="top_bar">
+            <div class="profile_image col-lg-2 col-md-2 col-md-2 col-xs-12">
+                <a href="#"><img src="images/original.jpg"></a>
+            </div>
+            <div class="col-lg-10 col-md-10 col-md-10 col-xs-12 ">
+                <h5>YOUR OWN WARM ROOM at L.E.S.</h5>
+            </div>
+        </div>
+                        </li>
+                        <li>
+                            <img src="images/slide1.jpg" />
+                            <div class="top_bar">
+            <div class="profile_image col-lg-2 col-md-2 col-md-2 col-xs-12">
+                <a href="#"><img src="images/original.jpg"></a>
+            </div>
+            <div class="col-lg-10 col-md-10 col-md-10 col-xs-12 ">
+                <h5>YOUR OWN WARM ROOM at L.E.S.</h5>
+            </div>
+        </div>
+                        </li>
+                    </ul> 
+              
+                </div> 
+                        
+            </section>
+        </div>
+<!--        <div class="top_bar">
+            <div class="profile_image col-lg-2 col-md-2 col-md-2 col-xs-12">
+                <a href="#"><img src="images/original.jpg"></a>
+            </div>
+            <div class="col-lg-10 col-md-10 col-md-10 col-xs-12 ">
+                <h5>YOUR OWN WARM ROOM at L.E.S.</h5>
+            </div>
+        </div>-->
+        <div class="fliter_bar">
+            <div class="alert alert-danger fade in m-b-15" style="margin-top: 20px;"></div>
+            <div class="alert alert-success fade in m-b-15" style="margin-top: 20px;"></div>
+            <ul class="entry_boxes">
+                <li>
+                    <select class="form-control input-lg category">
+                    </select>
+                </li>
+                <li>
+                    <select class="form-control input-lg sub_category">
+                        <option>Choose One</option>
+                    </select>
+                </li>
+                <!--                <li>
+                                    <input type="text" class="zip" placeholder="Zipcode" maxlength="6" class="location" value="" >
+                                </li>-->
+                <li>
+                    <input type="text" placeholder="Where are you Looking For?" class="location geocomplete" value="" name="location" >
+                </li>
+                <li>
+                    <img class="search_scrn" src="images/search.png">
+                </li>
+            </ul>
+        </div>
+        <div class="results_container">
+            <div class="search_result">
+                <div class="row">
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="pagination_btns"></div>
+            <!--            <div class="holder"> </div>-->
+            <div class='loader'></div>
+        </div>
+    </div>
+    <!--    <div class="col-lg-5 col-ms-5 col-sm-5 col-xs-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.3794518650775!2d-122.4376!3d37.75769999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1423854365705" width="600" height="450" frameborder="0" style="border:0"></iframe>
+        </div>-->
+    <div class="col-lg-5 col-ms-5 col-sm-5 col-xs-12" style="padding-left: 0px;">
+        <div id="loadMap"></div>
+        <!--        <div id="map" style="width: 100%; height: 450px;"></div> 
+                <pre id='coordinates' class='ui-coordinates'></pre>-->
+    </div>
+</div> 
+
+
+
+<div class="template_footer">
+
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="../bootstrap-3.2.0/docs/dist/js/bootstrap.js"></script> 
+
+background 
+
+<script type="text/javascript" src="js/jquery.tubular.1.0.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+
+calender 
+<script src="js/foundation-datepicker.js"></script> 
+<script>
+                        $(function () {
+                                window.prettyPrint && prettyPrint();
+                                $('#dp1').fdatepicker({
+                                        format: 'mm-dd-yyyy'
+                                });
+                                $('#dp2').fdatepicker({
+                                        closeButton: true
+                                });
+                                $('#dp3').fdatepicker();
+                                $('#dp3').fdatepicker();
+                                $('#dp-margin').fdatepicker();
+                                $('#dpMonths').fdatepicker();
+                                var startDate = new Date(2012, 1, 20);
+                                var endDate = new Date(2012, 1, 25);
+                                $('#dp4').fdatepicker()
+                                        .on('changeDate', function (ev) {
+                                        if (ev.date.valueOf() > endDate.valueOf()) {
+                                                $('#alert').show().find('strong').text('The start date can not be greater then the end date');
+                                        } else {
+                                                $('#alert').hide();
+                                                startDate = new Date(ev.date);
+                                                $('#startDate').text($('#dp4').data('date'));
+                                        }
+                                        $('#dp4').fdatepicker('hide');
+                                });
+                                $('#dp5').fdatepicker()
+                                        .on('changeDate', function (ev) {
+                                        if (ev.date.valueOf() < startDate.valueOf()) {
+                                                $('#alert').show().find('strong').text('The end date can not be less then the start date');
+                                        } else {
+                                                $('#alert').hide();
+                                                endDate = new Date(ev.date);
+                                                $('#endDate').text($('#dp5').data('date'));
+                                        }
+                                        $('#dp5').fdatepicker('hide');
+                                });
+                                // implementation of disabled form fields
+                                var nowTemp = new Date();
+                                var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                                var checkin = $('#dpd1').fdatepicker({
+                                        onRender: function (date) {
+                                                return date.valueOf() < now.valueOf() ? 'disabled' : '';
+                                        }
+                                }).on('changeDate', function (ev) {
+                                        if (ev.date.valueOf() > checkout.date.valueOf()) {
+                                                var newDate = new Date(ev.date)
+                                                newDate.setDate(newDate.getDate() + 1);
+                                                checkout.update(newDate);
+                                        }
+                                        checkin.hide();
+                                        $('#dpd2')[0].focus();
+                                }).data('datepicker');
+                                var checkout = $('#dpd2').fdatepicker({
+                                        onRender: function (date) {
+                                                return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+                                        }
+                                }).on('changeDate', function (ev) {
+                                        checkout.hide();
+                                }).data('datepicker');
+                        });
+                </script> 
+ FlexSlider  
+<script defer src="js/jquery.flexslider.js"></script> 
+
+
+FREE WALL 
+<script type="text/javascript" src="js/freewall.js"></script> 
+<script type="text/javascript">
+                        
+                        var colour = [
+                                
+                        ];
+
+                        $(".brick").each(function() {
+                                this.style.backgroundColor =  colour[colour.length * Math.random() << 0];
+                        });
+
+                        $(function() {
+                                var wall = new freewall("#freewall");
+                                wall.reset({
+                                        selector: '.brick',
+                                        animate: true,
+                                        cellW: 160,
+                                        cellH: 160,
+                                        onResize: function() {
+                                                wall.fitWidth();
+                                        }
+                                });
+                                wall.addCustomEvent('onBlockLoad', function(setting){
+                                        console.log(setting);
+                                });
+                                wall.fitWidth();
+                        });
+                </script>-->
+<!--<script defer src="scripts/vendor/basejs/jquery.flexslider.js"></script> --> 
+<script>
+    // =========mapbox===========
+//                        L.mapbox.accessToken = 'pk.eyJ1IjoibG9rZXNoLWJhbnNhbCIsImEiOiJhMjgyN2M1MDY3YjNiYjdiN2NiYjNhZmJjNmMyYzQ1NiJ9.lyrd8YhsRoxcq2bn7-M60A';
+//                        var map = L.mapbox.map('map', 'mapbox.streets')
+//                                .setView([38.8929, -77.0252], 14);  
+//                        
+</script>

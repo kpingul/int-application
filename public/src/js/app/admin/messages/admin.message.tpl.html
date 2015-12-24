@@ -1,0 +1,52 @@
+
+            <div class="row" add-over-flow data="remove">
+                <!-- begin col-12 --> 
+                <!--  <div class="alert alert-danger fade in m-b-15"></div>
+                <div class="alert alert-success fade in m-b-15"></div> -->
+                <div class="col-md-12">
+
+                    <div class="panel panel-inverse" >
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Message</h4>
+                        </div>
+                        <div class="panel-body" >
+                            <div class="height-sm" data-scrollbar="true">
+                                <ul class="media-list media-list-with-divider media-messaging messages">
+                                    <li  ng-repeat="message in vm.messages track by $index"  class="media media-sm" ng-if="message.isDeleted == 0">
+                                        <a href="javascript:;" class="pull-left">
+                                            <img src="admin/assets/img/user-5.jpg" alt="" class="media-object rounded-corner" />
+                                        </a>
+
+                                        <div class="media-body">
+                                            <h5 class="media-heading media-message-title-name">{{message.from.username}}</h5>
+                                            <p class="media-message-description">{{message.message}}
+                                                <i class="fa fa-2x fa-mail-reply fa-message-custom" ng-click="vm.replyToUser(message.from._id)"></i>
+                                                <i class="fa fa-2x fa-trash-o fa-message-custom" ng-click="vm.deleteMessage(message._id)"></i>
+
+                                            </p> 
+                                        </div> 
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-footer message_area">
+                            <form>
+                                <div class="input-group" ng-if="!vm.toggleMessage">
+                                    <input type="text" class="form-control bg-silver message_text" ng-model="vm.newMessage" placeholder="Enter message" />
+                                    <input type="hidden" class="hidden_id" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary message_btn" type="button" ng-click="vm.sendMessage()"><i class="fa fa-pencil"></i></button>
+                                    </span>
+                                </div>
+                                   <div class="input-group" ng-if="vm.toggleMessage">
+                                    <input type="text" class="form-control bg-silver message_text" ng-model="vm.replyMessage" placeholder="Enter new message" />
+                                    <input type="hidden" class="hidden_id" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary message_btn" type="button" ng-click="vm.replyBackMessage()"><i class="fa fa-pencil"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>

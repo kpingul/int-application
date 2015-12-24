@@ -1,0 +1,215 @@
+<style>
+
+    .select_btn{float:right;} 
+    .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+        background: #000;
+    } 
+    .table>thead>tr>th {
+        color: #fff;
+
+    }
+    .add_ads{  margin-bottom: 15px;
+               margin-left: 10px;} 
+
+
+
+    .imgdiv{max-width:150px;}
+    .imgdiv img{width:100%;}
+
+</style>
+  <div class="row" add-over-flow data="remove"> 
+      
+            <button class="btn btn-primary btn-xl add_ads" ng-click="vm.add()">Add Menu</button> 
+            <!-- begin col-12 -->
+            <div class="col-md-12">
+                <!-- begin panel -->
+                <div class="panel panel-inverse" style="color: #fff" >
+                    
+                <div class="panel-body"  ng-if="!vm.businessMenuAvailable">
+                    <h1>Add Business Menu...</h1>
+                </div>
+
+                    <div class="panel-body"  ng-if="vm.businessMenuAvailable">
+
+                        <div class="table-responsive">
+
+                            <table datatable="ng" class="row-border hover">
+                                <thead>
+                                <tr>
+                                    <th>Menu</th>
+                                    <th>Menu Name</th>
+                                    <th>Image</th>
+                                    <th>Items</th>
+                                    <th>Add Details</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                  <tr  ng-repeat="menu in vm.businessMenus track by $index">
+
+                                        <td>Menu {{$index + 1}}</td>
+                                        <td>{{menu.categories[0].name}}</td>
+                                        <td><img ng-src="{{menu.categories[0].picture}}" width ="75px"/></td>
+                                        <td>
+                                            <span ng-repeat="item in menu.categories[0].items track by $index">
+                                                {{item}}, 
+                                             </span>
+                                        </td>
+                                        <td>-</td>
+                                        <td>
+                                            <a  href="" id="' + menu_id + '" class="btn btn-primary btn-xl edit_ad_click" ng-click="vm.edit($index)" data-toggle="modal" >Edit</a>
+
+
+                                            <!-- modal for edit menu-->
+                                            <div class="modal" ng-attr-id="{{ 'object-' + $index }}" aria-hidden="false">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">��</button>
+                                                            <h4 class="modal-title">Edit Menu</h4>
+                                                        </div>
+                                                        <div class="modal-body" style="color: #000000"> 
+                                            
+
+                                                            <div>
+                                                                <fieldset>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <form>
+                                                                                <div class="form-group">
+
+                                                                                    <div class="imgdiv">
+                                                                                        <input accept="image/*" type="file" file-model="vm.editMenuImageFile" name="file" id="ads_img_edit">
+                                                                                        <img id="ads_img_src_edit"  ng-src="{{vm.businessMenus[$index].categories[0].picture}}" preview-image data="ads_img_edit ads_img_src_edit" />
+                                                                                     
+
+                                                                                    </div>
+                                                                                </div> 
+                                                                            </form>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label>Category Name</label>
+                                                                                <div class="controls"> 
+                                                                                    <input type="text" name="category" id="category-edit" ng-value="vm.businessMenus[$index].categories[0].name" ng-model="vm.newCategoryName" class="form-control"/>
+                                                                                  
+                                                                                </div>
+                                                                            </div> 
+
+                                                                            <div class="col-sm-12 col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label>Items 
+
+                                                                                        <input type="text" ng-model="vm.addedItem">
+
+                                                                                        <button class="btn btn-primary btn-xs add-btn" ng-click="vm.addItem($index)">+</button>
+
+                                                                                    </label>
+                                                                                    <span style="display: block; padding: 4px 0px" ng-repeat="item in vm.businessMenus[$index].categories[0].items track by $index">
+                                                                                        <a href="" ng-click="vm.editItem($index)">{{item}}
+                                                                                            
+                                                                                        </a>
+                                                                                        <button class="btn btn-primary btn-xs">Edit</button>
+                                                                                        <button class="btn btn-danger btn-xs" ng-click="vm.deleteItem($parent.$index, $index)">Delete</button>
+                                                                                     </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </fieldset>
+                                                            </div> 
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                                                            <a href="javascript:;" class="btn btn-sm btn-success edit_menu_btn" ng-click="vm.updateBusinessMenu($index, menu._id, menu.categories[0].name, menu.categories[0]._id, menu.categories[0].picture, menu.categories[0].items)">Update</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        <!-- end of edit modal for add ads-->
+                                        </td>
+                                        <td><a href="" class="btn btn-primary btn-xl delete_ad" ng-click="vm.deleteBusinessMenu(menu._id)" >Delete</a></td>
+                                    
+                                    </tr>
+                                </tbody>
+                            </table>
+                  
+                        </div>
+                    </div>
+                </div>
+                <!-- end panel -->
+            </div>
+            <!-- end col-12 -->
+        </div> 
+
+        <!-- modal for add ads-->
+        <div class="modal" id="modal-dialog-add" aria-hidden="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Add Menu</h4>
+                    </div>
+                    <div class="modal-body" style="color: black">  
+
+                     <!--    <div class="alert alert-danger fade in m-b-15"></div>
+                     <div class="alert alert-success fade in m-b-15"></div> -->
+
+                        <div>
+                            <fieldset>
+                                <form ng-submit="vm.addBusinessMenu()" name="addMenus">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <div class="imgdiv">
+                                                        <input accept="image/*" type="file" name="file" id="ads_image_add" file-model="vm.addMenuImageFile">
+                                                        <img src="admin/assets/img/photo-camera5.png"  id="ads_img_src_add" preview-image data="ads_image_add ads_img_src_add"/>
+                                                     
+                                                    </div>
+                                                </div>
+                                           
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Add Category</label>
+                                                <div class="controls"> 
+                                                    <input type="text" name="category" id="category" class="form-control" ng-model="vm.businessCategory"/>
+                                                    <!--                                                        <textarea  maxlength="140" rows="4" cols="50" name="ad_copy" placeholder="Type your description" class="form-control"></textarea>-->
+                                                </div>
+                                            </div> 
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label>Items <a href="javascript:;" class="btn btn-primary btn-sm add-btn" ng-click="vm.addBusinessMenuItems(vm.businessMenuItem)">+</a></label>
+                                                    <ul class="addMenuList">
+                                                        <li ng-repeat="item in vm.businessMenuItems">{{item}}, </li>
+                                                    </ul>
+
+
+                                                    <div class="wrapper_div">
+                                                        <div>
+                                                            <input type="text" class="form-control" ng-model="vm.businessMenuItem">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                                        <button type="submit" class="btn btn-sm btn-success" id="add_menu_btn">Add</button>
+                                    </div>
+                             </form>
+                            </fieldset>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- end of modal for add ads--> 
+
+  

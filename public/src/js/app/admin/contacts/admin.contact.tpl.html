@@ -1,0 +1,94 @@
+
+
+ <div class="row">
+                <!-- begin col-12 --> 
+         <!--         <div class="alert alert-danger fade in m-b-15"></div>
+                <div class="alert alert-success fade in m-b-15"></div> -->
+                <div class="col-md-12" add-contact-modal>
+                    
+                     <p> <a class="btn btn-primary " ng-click="vm.addModal()" style="background: #14BED7" >Add Contact</a> </p>
+
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Contact</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="height-sm" id="activate">
+                                <ul class="media-list media-list-with-divider media-messaging messages">
+
+                                    <li class="media media-sm" ng-repeat="contact in vm.contacts track by $index">
+
+                                        <edit-contact-modal>
+                                        
+                                       </edit-contact-modal>
+                                      
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+        <!-- modal for edit menu-->
+   <div class="modal" id="addContact" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Add Contact</h4>
+            </div>
+            <div class="modal-body">  
+<!-- 
+                <div class="alert alert-danger fade in m-b-15"></div>
+                <div class="alert alert-success fade in m-b-15"></div> -->
+
+                <div>
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-4 form-group">
+                                            <label>Contact Name</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <input type="text" ng-model="vm.businessInformation.name"/> 
+                                        </div>
+                                     </div>
+                            </div> 
+                             <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-4 form-group">
+                                            <label>Contact Phone Number</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <input type="text" ng-model="vm.businessInformation.phone" />
+                                        </div>
+                                    </div>
+                            </div>
+                         
+                        </div>
+
+                    </fieldset>
+                </div> 
+
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                <a href="" class="btn btn-sm btn-success" data-dismiss="modal" ng-click="vm.addContact()">Add</a>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- end of edit modal for add ads-->
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,558 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]>&lt;!&ndash;>
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>iNeedTreez | Settings</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <!--    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+        <link href="assets/plugins/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/plugins/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="assets/css/animate.min.css" rel="stylesheet" />
+        <link href="assets/css/style.min.css" rel="stylesheet" />
+        <link href="assets/css/style-responsive.min.css" rel="stylesheet" />-->
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+    <!--    <link href="assets/plugins/parsley/parsley.css" rel="stylesheet" />-->
+    <!-- ================== END PAGE LEVEL STYLE ================== -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="assets/crossbrowserjs/html5shiv.js"></script>
+    <script src="assets/crossbrowserjs/respond.min.js"></script>
+    <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <!--    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+         ================== END BASE JS ================== 
+        <script src="assets/plugins/parsley/parsley.js"></script>-->
+    <style>
+        /*        textarea {resize:none;}
+                legend.pull-left {
+        
+                    color: #fff;
+        
+                }
+                body {
+                    color: #fff;
+                }*/
+    </style>
+
+</head>
+<!--<body>
+     begin #page-loader 
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+     end #page-loader 
+
+     begin #page-container 
+    <div id="page-container" class="fade">
+         begin #header 
+        <div id="header" class="header navbar navbar-default navbar-fixed-top">
+
+        </div>
+
+        <div class ="common_sidebar"></div>
+         end #sidebar 
+         begin #content 
+        <div id="content" class="content">
+
+             begin row 
+            <div class="row">
+                 begin col-12 
+                <div class="col-md-12">
+                     begin panel 
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Settings</h4>
+                        </div>
+                        <div class="panel-body">
+                            <form action="/" method="POST">
+                                <div id="wizard">
+                                    <ol>
+                                        <li>Profile</li>
+                                        <li>Info</li>
+                                        <li>Ads</li>
+                                        <li>Menu</li>
+                                    </ol>
+                                     begin wizard step-1 
+                                    <div>
+                                        <fieldset>
+                                            <legend class="pull-left width-full">Profile</legend>
+                                             begin row 
+                                            <div class="row">
+                                                 begin col-4 
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="add-dist-sales-col1">
+                                                            <input accept="image/*" type="file" name="image1[bussiness_logo]" id="business_logo">
+                                                            <img id="add-dist-sales-img" src="assets/img/photo-camera5.png"/>
+                                                            <span id="add-sales-rep-sr-image-name"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="add-dist-sales-col1">
+                                                            <input accept="image/*" type="file" name="image1[bussiness_img]" id="bussiness_image">
+                                                            <img id="bussiness_img_src" src="assets/img/photo-camera5.png"/>
+                                                            <span id="bussiness_img_text"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                             end row 
+                                        </fieldset>
+                                    </div>
+                                     end wizard step-1 
+                                     begin wizard step-2 
+                                    <div>
+                                        <fieldset>
+                                            <legend class="pull-left width-full">Information</legend>
+                                             begin row 
+                                            <form class="form-horizontal form-bordered" data-validate="parsley">
+                                                <div class="row">
+                                                     begin col-6 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Name</label>
+                                                            <input type="text" name="name" placeholder="abc" class="form-control  parsley-validated" data-required="true" />
+                                                        </div>
+                                                    </div>
+                                                     end col-6 
+                                                     begin col-6 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label> Address</label>
+                                                            <input type="text" name="address" placeholder="abc" class="form-control  parsley-validated" data-required="true"/>
+                                                        </div>
+                                                    </div>
+                                                     end col-6 
+                                                </div>
+
+                                                <div class="row">
+                                                     begin col-6 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>ZipCode</label>
+                                                            <input class="form-control parsley-validated" type="text" id="number" name="number" data-trigger="change" data-type="number" placeholder="Number">
+                                                            <input type="text" name="number" data-trigger="change" data-type="number" placeholder="1234556" id="number" maxlength="6" class="form-control parsley-validated" />
+                                                        </div>
+                                                    </div>
+                                                     end col-6 
+                                                     begin col-6 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Website</label>
+                                                            <input class="form-control parsley-validated" type="text" id="website" name="website" data-trigger="change" data-type="url" placeholder="url">
+                                                            <input type="text" id="website" name="website" data-trigger="change" placeholder="someone@example.com" class="form-control parsley-validated" data-trigger="change" data-type="url"/>
+                                                        </div>
+                                                    </div>
+                                                     end col-6 
+                                                </div>
+
+                                                <div class="row">
+                                                     begin col-6 
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Phone Number</label>
+                                                            <input class="form-control parsley-validated" type="text" id="data-phone" data-type="phone" placeholder="(XXX) XXXX XXX">
+                                                            <input type="text" name="phone" id="data-phone" data-type="phone" placeholder="(XXX) XXXX XXX" class="form-control  parsley-validated" />
+                                                        </div>
+                                                    </div>
+                                                     end col-6 
+                                                     begin col-6 
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <p>Business Hours</p>
+                                                             begin col-6 
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control parsley-validated" id="select-required" name="selectBox" data-required="true">
+                                                                        <option value="">Please choose</option>
+                                                                        <option value="foo">Monday</option>
+                                                                        <option value="bar">Tuesday</option>
+                                                                        <option value="bar">Wednesday</option>
+                                                                        <option value="bar">Thursday</option>
+                                                                        <option value="bar">Friday</option>
+                                                                        <option value="bar">Saturday</option> 
+                                                                        <option value="bar">Sunday</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                             end col-6 
+                                                             begin col-6 
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control parsley-validated" id="select-required" name="selectBox" data-required="true">
+                                                                        <option value="">Please choose</option>
+                                                                        <option value="foo">Monday</option>
+                                                                        <option value="bar">Tuesday</option>
+                                                                        <option value="bar">Wednesday</option>
+                                                                        <option value="bar">Thursday</option>
+                                                                        <option value="bar">Friday</option>
+                                                                        <option value="bar">Saturday</option> 
+                                                                        <option value="bar">Sunday</option>
+                                                                    </select>       
+                                                                </div>
+                                                            </div>
+                                                             end col-6 
+                                                        </div>
+                                                        <div class="row">
+                                                             begin col-6 
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control parsley-validated" id="select-required" name="selectBox" data-required="true">
+                                                                        <option value="">AM</option>
+                                                                        <option value="01:00">01:00</option>
+                                                                        <option value="01:30">01:30</option>
+                                                                        <option value="02:00">02:00</option>
+                                                                        <option value="02:30">02:30</option>
+                                                                        <option value="03:00">03:00</option>
+                                                                        <option value="03:30">03:30</option>
+                                                                        <option value="04:00">04:00</option>
+                                                                        <option value="04:30">04:30</option>
+                                                                        <option value="05:00">05:00</option>
+                                                                        <option value="05:30">05:30</option>
+                                                                        <option value="06:00">06:00</option>
+                                                                        <option value="06:30">06:30</option>
+                                                                        <option value="07:00">07:00</option>
+                                                                        <option value="07:30">07:30</option>
+                                                                        <option value="08:00">08:00</option>
+                                                                        <option value="08:30">08:30</option>
+                                                                        <option value="09:00">09:00</option>
+                                                                        <option value="09:30">09:30</option>
+                                                                        <option value="10:00">10:00</option>
+                                                                        <option value="10:30">10:30</option>
+                                                                        <option value="11:00">11:00</option>
+                                                                        <option value="11:30">11:30</option>
+                                                                        <option value="12:00">12:00</option>
+                                                                        <option value="12:30">12:30</option>
+
+                                                                    </select>                                                            </div>
+                                                            </div>
+                                                             end col-6 
+                                                             begin col-6 
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control parsley-validated" id="select-required" name="selectBox" data-required="true">
+                                                                        <option value="">PM</option>
+                                                                        <option value="01:00">01:00</option>
+                                                                        <option value="01:30">01:30</option>
+                                                                        <option value="02:00">02:00</option>
+                                                                        <option value="02:30">02:30</option>
+                                                                        <option value="03:00">03:00</option>
+                                                                        <option value="03:30">03:30</option>
+                                                                        <option value="04:00">04:00</option>
+                                                                        <option value="04:30">04:30</option>
+                                                                        <option value="05:00">05:00</option>
+                                                                        <option value="05:30">05:30</option>
+                                                                        <option value="06:00">06:00</option>
+                                                                        <option value="06:30">06:30</option>
+                                                                        <option value="07:00">07:00</option>
+                                                                        <option value="07:30">07:30</option>
+                                                                        <option value="08:00">08:00</option>
+                                                                        <option value="08:30">08:30</option>
+                                                                        <option value="09:00">09:00</option>
+                                                                        <option value="09:30">09:30</option>
+                                                                        <option value="10:00">10:00</option>
+                                                                        <option value="10:30">10:30</option>
+                                                                        <option value="11:00">11:00</option>
+                                                                        <option value="11:30">11:30</option>
+                                                                        <option value="12:00">12:00</option>
+                                                                        <option value="12:30">12:30</option>
+                                                                    </select>                                                            </div>
+                                                            </div>
+                                                             end col-6 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </fieldset>
+                                    </div>
+                                     end wizard step-2 
+                                     begin wizard step-3 
+                                    <div>
+                                        <fieldset>
+                                            <legend class="pull-left width-full">Ads</legend>
+                                             begin row 
+                                            <div class="row">
+                                                 begin col-4 
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="add-dist-sales-col1">
+                                                            <input accept="image/*" type="file" name="image1[ads]" id="ads_image">
+                                                            <img id="ads_img_src" src="assets/img/photo-camera5.png"/>
+                                                            <span id="ads_img_text"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Ad Copy</label>
+                                                        <div class="controls">
+                                                            <textarea  maxlength="140" rows="4" cols="50" name="ad_copy" placeholder="Type your description" class="form-control"></textarea>
+                                                            <input type="textarea" name="username" placeholder="johnsmithy" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             end row 
+                                        </fieldset>
+                                    </div>
+                                     end wizard step-3 
+                                     begin wizard step-4 
+
+                                     begin wizard step-3 
+                                    <div>
+                                        <fieldset>
+                                            <legend class="pull-left width-full">Menu</legend>
+                                             begin row 
+                                            <div class="row">
+                                                 begin col-4 
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <div class="add-dist-sales-col1">
+                                                            <input accept="image/*" type="file" name="image1[menu}" id="menu_image">
+                                                            <img id="menu_img_src" src="assets/img/photo-camera5.png"/>
+                                                            <span id="menu_img_text"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <select class="form-control">
+                                                            <option>Category Name</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <select multiple="" class="form-control">
+                                                            <option>Product/Services List</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             end row 
+                                        </fieldset>
+                                    </div>
+
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                     end panel 
+                </div>
+                 end col-12 
+            </div>
+             end row 
+        </div>
+         end #content 
+
+         begin scroll to top btn 
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+         end scroll to top btn 
+    </div>-->
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<!--    <script src="assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+    <script src="assets/js/form-wizards.demo.min.js"></script>
+    <script src="assets/js/config.js"></script>-->
+<!--================== END PAGE LEVEL JS ==================-->
+<!--    <script src="assets/js/apps.min.js"></script>-->
+<!-- ================== END PAGE LEVEL JS ================== -->
+<!--    <script>
+        $(document).ready(function() {
+            App.init();
+            FormWizard.init();
+            $(".links-items").removeClass("active");
+            $("#settings").addClass("active");
+        });
+        $(window).load(function() {
+            $(".links-items").removeClass("active");
+            $("#settings").addClass("active");
+        });
+    </script>-->
+<script>
+    $(document).ready(function() {
+        window.location.href = "business.html";
+//            $("#business_logo").live("change", function() {
+//                var imageFiles = document.getElementById('business_logo').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#add-dist-sales-img').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#business_logo').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#add-sales-rep-sr-image-name').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//            $("#bussiness_image").live("change", function() {
+//                var imageFiles = document.getElementById('bussiness_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#bussiness_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#bussiness_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#bussiness_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//
+//            $("#ads_image").live("change", function() {
+//                var imageFiles = document.getElementById('ads_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#ads_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#ads_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#ads_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//
+//            $("#menu_image").live("change", function() {
+//                var imageFiles = document.getElementById('menu_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#menu_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#menu_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#menu_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+
+    });
+
+</script>
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!--    <div class ="common_footer">
+    </div>-->

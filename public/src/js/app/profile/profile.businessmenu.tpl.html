@@ -1,0 +1,35 @@
+<div>
+    <div class="col-xs-1 col-sm-1 col-md-1">
+        
+        <a href="" class="profile-menu-arrow-prev" menu-toggle clicked="prev"></a>
+        
+    </div>
+
+    <div class="col-xs-10 col-sm-10 col-md-10">
+      <ul class="menu_details menu" id="menu-scroll" ng-if="businessMenuAvailable">
+            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-repeat="menu in filteredMenus track by $index">
+
+                <div class="profile_image">
+                    <img width="100px" height="100px" ng-src="{{menu.categories[0].picture}}"/>
+                </div>
+                <h2>{{menu.categories[0].name}}</h2>
+                <ul>
+                    <li ng-repeat="list in menu.categories[0].items track by $index">
+                        <a href="">{{list}}</a>
+                    </li>
+                </ul>
+            </li>
+        
+      </ul><!-- end of menu details -->
+
+      <ul class="menu_details menu" id="menu-scroll" ng-if="!businessMenuAvailable">
+            <h1>Business Menus Go Here...</h1>
+      </ul>
+    </div>
+
+    <div class="col-xs-1 col-sm-1 col-md-1 ">
+        <a href="" class="profile-menu-arrow-next" menu-toggle clicked="next" ></a>
+        
+    </div>
+
+</div><!-- end of menu -->

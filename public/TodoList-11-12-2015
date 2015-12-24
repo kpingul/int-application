@@ -1,0 +1,36 @@
+//Summary of Todo list 11 / 12 / 15
+
+Completed: 
+	-integrated business editing for information / menu / ads 
+		how: 
+			Using Angular UI router nesting 3 levels deep
+			inheriting from the parent controller of admin, 
+			for ex:
+			
+				1st level: admin
+				2nd level: admin.businesses
+				3rd level: admin.businesses.info
+						   admin.businesses.menu
+						   admin.businesses.ads
+
+Still Need to Complete:
+
+	-Syncing business editing using APIService endpoints
+		-businesses/:businessid (Must Be Authenticated)
+		-menu/:menuId or businessId (Must Be Authenticated)
+		-ads/:adId or businessId (Must Be Authenticated)
+
+	-active links for businesses
+	
+	-Search Page where user gets directed to the profile page but 
+	 the page is blur
+		references: check mockups21 image located in desktop 
+
+	-Messaging UI similar to Facebook
+
+	-Login Issue 401 Unauthorize handling
+		-redirect to login page or request for another access token or 
+		 use of the refresh token
+
+	-Decorators across application( loading bars/icons etc..)
+		-use of set timeouts

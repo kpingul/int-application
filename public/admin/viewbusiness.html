@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]>&lt;!&ndash;>
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>iNeedTreez | Settings</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/plugins/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/style.min.css" rel="stylesheet" />
+    <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+    <link href="assets/plugins/parsley/parsley.css" rel="stylesheet" />
+    <!-- ================== END PAGE LEVEL STYLE ================== -->
+    <link href="assets/plugins/DataTables-1.9.4/css/data-table.css" rel="stylesheet" />
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="assets/crossbrowserjs/html5shiv.js"></script>
+    <script src="assets/crossbrowserjs/respond.min.js"></script>
+    <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
+    <script src="assets/plugins/parsley/parsley.js"></script>
+    <style>
+        /*        textarea {resize:none;}
+                legend.pull-left {
+        
+                    color: #fff;
+        
+                }
+                body {
+                    color: #fff;
+                }
+                .panel-body{border:1px solid;}
+                .select_btn{float:right;}*/ *
+
+
+        textarea {resize:none;}
+        legend.pull-left {
+
+            color: #fff;
+
+        }
+        body {
+            color: #fff;
+        }
+        .panel-body{border:1px solid;}
+        .select_btn{float:right;} 
+        .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+            background: #000;
+        } 
+        .table>thead>tr>th {
+            color: #fff;
+
+        }
+        .add_ads{  margin-bottom: 15px;
+                   margin-left: 10px;} 
+        .modal-footer{margin-top: 0px;}
+        label {color: black} 
+        .alert-danger{display:none}
+        .alert-success{display:none}
+        .imgdiv{max-width:150px;}
+        .imgdiv img{width:100%;}
+
+    </style>
+
+</head>
+<body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-default navbar-fixed-top">
+
+        </div>
+
+        <div class ="common_sidebar"></div>
+        <!-- end #sidebar -->
+        <!-- begin #content -->
+        <div id="content" class="content"> 
+
+
+
+            <div class="row"> 
+                <div class="alert alert-danger fade in m-b-15"></div>
+                <div class="alert alert-success fade in m-b-15"></div>
+                <a class="btn btn-primary btn-xl add_ads">Add Menu</a> 
+                <!-- begin col-12 -->
+                <div class="col-md-12">
+                    <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-body">
+
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Menu</th>
+                                            <th>Menu Name</th>
+                                            <th>Image</th>
+                                            <th>Items</th>
+                                            <th>Add Details</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="menu_view" >
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div> 
+
+            <!-- modal for add ads-->
+            <div class="modal fade in" id="modal-dialog-add" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Add Menu</h4>
+                        </div>
+                        <div class="modal-body">  
+
+                            <div class="alert alert-danger fade in m-b-15"></div>
+                            <div class="alert alert-success fade in m-b-15"></div>
+
+                            <div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form method="POST" name ="addImage" enctype="multipart/form-data" >
+                                                <div class="form-group">
+                                                    <div class="imgdiv">
+                                                        <input accept="image/*" type="file" name="file" id="ads_image">
+                                                        <img id="ads_img_src" src="assets/img/photo-camera5.png"/>
+                                                        <input type="hidden" id="hidden_menu_id"/>
+                                                        <span id="ads_img_text"></span>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Add Category</label>
+                                                <div class="controls"> 
+                                                    <input type="text" name="category" id="category" class="form-control"/>
+                                                    <!--                                                        <textarea  maxlength="140" rows="4" cols="50" name="ad_copy" placeholder="Type your description" class="form-control"></textarea>-->
+                                                </div>
+                                            </div> 
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label>Items <a href="javascript:;" class="btn btn-primary btn-sm add-btn add-new-youtube-link">+</a></label>
+                                                    <div class="wrapper_div wrapper_upload_youtube">
+                                                        <div class="youtube_upload_file" id="youtubefile0">
+                                                            <input type="text" name="linktoyoutube0" value="xdd" class="form-control added-fields count_youtube" myvalues="0">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div> 
+
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                            <a href="javascript:;" class="btn btn-sm btn-success" id="add_menu_btn">Add</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- end of modal for add ads--> 
+
+            <!-- modal for edit menu-->
+            <div class="modal fade in" id="modal-dialog-edit" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Edit Menu</h4>
+                        </div>
+                        <div class="modal-body"> 
+                         <div class="alert alert-danger fade in m-b-15"></div>
+                            <div class="alert alert-success fade in m-b-15"></div>
+
+                            <div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form method="POST" name ="editImage" enctype="multipart/form-data" >
+                                                <div class="form-group">
+
+                                                    <div class="imgdiv">
+                                                        <input accept="image/*" type="file" name="file" id="menu_image">
+                                                        <img id="menu_img_src" src="assets/img/photo-camera5.png"/>
+                                                        <span id="menu_img_text"></span> 
+                                                        <input type="hidden" id="menu_id"/>
+                                                        <input type="hidden" id="menu_category_id"/>
+                                                        <input type="hidden" id="hidden_image"/>
+
+                                                    </div>
+                                                </div> 
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Add Category</label>
+                                                <div class="controls"> 
+                                                    <input type="text" name="category" id="category-edit" class="form-control"/>
+                                                    <!--                                                        <textarea  maxlength="140" rows="4" cols="50" name="ad_copy" placeholder="Type your description" class="form-control"></textarea>-->
+                                                </div>
+                                            </div> 
+
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="form-group">
+                                                    <label>Items <a href="javascript:;" class="btn btn-primary btn-sm add-btn edit-new-youtube-link">+</a></label>
+                                                    <div class="wrapper_div edit_wrapper_upload_youtube">
+                                                        <!--                                                        <div class="edit-youtube_upload_file" id="edit-youtubefile0">
+                                                                                                                    <input type="text" name="linktoyoutube0" value="" class="form-control added-fields edit-count_youtube" myvalues="0">
+                                                                                                                </div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div> 
+
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                            <a href="javascript:;" class="btn btn-sm btn-success edit_menu_btn">Update</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- end of edit modal for add ads-->
+
+        </div>
+        <!-- end #content -->
+
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
+    </div>
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+    <script src="assets/js/form-wizards.demo.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <!--================== END PAGE LEVEL JS ==================--> 
+    <script src="assets/plugins/DataTables-1.9.4/js/jquery.dataTables.js"></script>
+    <script src="assets/plugins/DataTables-1.9.4/js/data-table.js"></script>
+
+    <script src="assets/js/apps.min.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+    <script>
+        $(document).ready(function() {
+            App.init();
+            FormWizard.init();
+            $(".links-items").removeClass("active");
+            $("#settings, #menu").addClass("active");
+        });
+        $(window).load(function() {
+            $(".links-items").removeClass("active");
+            $("#settings, #menu").addClass("active");
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+          var username =   $.cookie("username")
+            /* *******************************************************************************
+             View All Menu
+             ******************************************************************************** */
+            $.ajax({
+                type: 'GET',
+//                api/:username:/businesses
+                url: globalpath +"users/"+username +'/businesses',
+                contentType: "application/json",
+                beforeSend: function(xhr, settings) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                },
+                success: function(response) {
+                    console.log("viewmenuresponse");
+                    console.log(response);
+                    return false;
+                    if (response) {
+                        var str = '';
+                        var length = response.length;
+                        for (var i = 0; i < length; i++) {
+                            var menu_count = i + 1
+                            var menu_name = "Menu" + menu_count;
+                            var category_length = response[i]["categories"].length;
+                            var menu_id = response[i]["_id"];
+                            str += '<tr class="odd gradeX">';
+                            str += '<td>' + menu_name + '</td>';
+
+                            if (category_length == 0) {
+                                str += '<td>-</td>';
+                                str += '<td>-</td>';
+                                str += '<td>-</td>';
+                                str += '<td><a  href="javascript:;" id="' + menu_id + '" class="btn btn-primary btn-xl menu_detail_click">Add Details</a></td>';
+                                str += '<td>-</td>';
+                                str += '<td>-</td>';
+                                str += '</tr>';
+                            }
+                            else {
+                                var category_name = response[i]["categories"][0]["name"];
+                                var picture = response[i]["categories"][0]["picture"];
+                                var menu_id = response[i]["_id"];
+                                var item = response[i]["categories"][0]["items"].toString();
+                                str += '<td>' + category_name + '</td>';
+                                str += '<td><img src="' + picture + '" width ="75px"/></td>';
+                                str += '<td>' + item + '</td>';
+                                str += '<td>-</td>';
+                                str += '<td><a  href="javascript:;" id="' + menu_id + '" class="btn btn-primary btn-xl edit_ad_click">Edit</a></td>';
+                                str += '<td><a href="javascript:;" class="btn btn-primary btn-xl delete_ad" id="' + menu_id + '">Delete</a></td>';
+                                str += '</tr>';
+                            }
+                        }
+                        $("tbody.menu_view").html(str);
+                        $("#example").dataTable();
+                    }
+                },
+              error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+
+            });
+
+//            /* *******************************************************************************
+//             Add a New Items Input Field On Click of + Button in add menu
+//             ******************************************************************************** */
+//            $(document).delegate('.add-new-youtube-link', 'click', function(e) {
+//                var last_pic = $(".wrapper_upload_youtube .youtube_upload_file:last-child input").attr("myvalues");
+//                var i = parseInt(last_pic) + 1;
+//                var str = '';
+//                str += '<div class="youtube_upload_file" id="youtubefile' + i + '">';
+//                str += '<input type="text" name="linktoyoutube' + i + '" class="form-control added-fields count_youtube"  myvalues="' + i + '">';
+//                str += '</div>';
+//                $(".wrapper_upload_youtube").append(str);
+//            });
+//
+//            /* *******************************************************************************
+//             Add a New Items  Input Field On Click of + Button in edit menu
+//             ******************************************************************************** */
+//            $(document).delegate('.edit-new-youtube-link', 'click', function(e) {
+//                var last_pic = $(".edit_wrapper_upload_youtube .edit-youtube_upload_file:last-child input").attr("myvalues");
+//                var i = parseInt(last_pic) + 1;
+//                var str = '';
+//                str += '<div class="edit-youtube_upload_file" id="edit-youtubefile' + i + '">';
+//                str += '<input type="text" name="linktoyoutube' + i + '" class="form-control added-fields edit-count_youtube"  myvalues="' + i + '">';
+//                str += '</div>';
+//                $(".edit_wrapper_upload_youtube").append(str);
+//            });
+//
+//            $("#ads_image").live("change", function() {
+//                var imageFiles = document.getElementById('ads_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#ads_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#ads_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#ads_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//
+//            $("#menu_image").live("change", function() {
+//                var imageFiles = document.getElementById('menu_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#menu_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#menu_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#menu_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//
+//            /* *******************************************************************************
+//             On click of add details store menu id in hidden field
+//             ******************************************************************************** */
+//            $(".menu_detail_click").live("click", function() {
+//                var menu_id = $(this).attr("id")
+//                $("#hidden_menu_id").val(menu_id);
+//                $("#modal-dialog-add").modal("show");
+//
+//            })
+//
+//            /* *******************************************************************************
+//             On click of add menu button menu created
+//             ******************************************************************************** */
+//            $(".add_ads").click(function() {
+//                var params = {
+//                    "biz": "55a8f91d8b70fff4391cc70e",
+//                }
+//                $.ajax({
+//                    type: 'POST',
+//                    url: globalpath + 'menu/',
+//                    contentType: "application/json",
+//                    data: JSON.stringify(params),
+//                    beforeSend: function(xhr, settings) {
+//                        $(".add_ads").hide();
+//                        xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                    },
+//                    success: function(response) {
+//                        console.log("responsemenu");
+//                        console.log(response);
+//                        showSuccess("Menu created successfully");
+//                        setTimeout(function() {
+//                            location.reload();
+//                        }, settimeout);
+//
+//
+//                    },
+//                   error: function(error) { 
+//                     console.log("in prfile error");
+//                     getAccessToken();
+//                    console.log(error);
+//                    showError(error);
+//                }
+//                });
+//            });
+//
+//            /* *******************************************************************************
+//             Add a particular Menu
+//             ******************************************************************************** */
+//            $("#add_menu_btn").click(function() {
+//
+//                var category = $("#category").val();
+//                var menu_id = $("#hidden_menu_id").val();
+//                var category_array = []
+//                $(".count_youtube").each(function() {
+//                    var item = $(this).val();
+//                    if (item == "" || item == null) {
+//                    }
+//                    else {
+//                        category_array.push(item)
+//                    }
+//                })
+//                if (ifBlank("Category", category) == false)
+//                    return false;
+//                if (category_array.length == 0) {
+//                    showError("Please enter at least one item");
+//                    return false;
+//                }
+//
+//                var img = $("#ads_image").val();
+//                if (img == "") {
+//                    showError("Please choose image");
+//                    return false;
+//                }
+//                else {
+//
+//                    var formData = new FormData(document.forms.namedItem("addImage"));
+//                    $.ajax({
+//                        type: "POST",
+//                        url: globalpath + 'images',
+//                        data: formData,
+//                        processData: false,
+//                        contentType: false,
+//                        beforeSend: function(xhr, settings) {
+//                            $("#add_menu_btn").hide();
+//                            xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                        },
+//                        success: function(response) {
+//                            console.log(response);
+//                            var path = response["path"];
+//                            console.log(path);
+//
+//                            var params = {
+//                                "name": category,
+//                                "picture": path,
+//                                "items": category_array
+//                            }
+//                            $.ajax({
+//                                type: 'POST',
+//                                url: globalpath + 'menu/' + menu_id + '/category/',
+//                                contentType: "application/json",
+//                                data: JSON.stringify(params),
+//                                beforeSend: function(xhr, settings) {
+//                                    xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                                },
+//                                success: function(response) {
+//                                    console.log("responsewithaddcategory");
+//                                    console.log(response);
+//                                    //return false;
+//                                    $("#add_menu_btn").show();
+//                                    if (response["success"]) {
+//                                        $("#modal-dialog").modal("hide");
+//                                        showSuccess("Menu has been created successfully");
+//                                        setTimeout(function() {
+//                                            location.reload();
+//                                        }, settimeout);
+//                                    }
+//                                    else {
+//                                        showError(response["error"]);
+//                                    }
+//                                },
+//                               error: function(error) { 
+//                     console.log("in prfile error");
+//                     getAccessToken();
+//                    console.log(error);
+//                    showError(error);
+//                }
+//
+//                            });
+//                        }
+//                    });
+//                }
+//            });
+//            /* *******************************************************************************
+//             Delete a particular Ad
+//             ******************************************************************************** */
+//            $(document).delegate('a.delete_ad', 'click', function(e) {
+//                e.preventDefault();
+//                var id = $(this).attr("id");
+//                var ch = confirm("Are you sure you want to delete this Menu?");
+//                if (ch == true) {
+//                    $.ajax({
+//                        type: 'DELETE',
+//                        url: globalpath + 'menu/' + id,
+//                        contentType: "application/json",
+//                        beforeSend: function(xhr, settings) {
+//                            xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                        },
+//                        success: function(response) {
+//                            console.log(response);
+//                            if (response['success']) {
+//                                showSuccess("Congratulations! Menu has been deleted successfully");
+//                                setTimeout(function() {
+//                                    location.reload();
+//                                }, settimeout);
+//                            }
+//                            else {
+//                                showError(response["error"]);
+//                            }
+//                        }
+//                    });
+//                }
+//            });
+//
+//
+//            /* *******************************************************************************
+//             Show Prefilled Data of a particular Menu
+//             ******************************************************************************** */
+//            $(".edit_ad_click").live("click", function() {
+//                var id = $(this).attr("id");
+//                $.ajax({
+//                    type: 'GET',
+//                    url: globalpath + 'menu/' + id,
+//                    contentType: "application/json",
+//                    beforeSend: function(xhr, settings) {
+//                        xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                    },
+//                    success: function(response) {
+//                        console.log("in get ad")
+//                        console.log(response);
+//                        if (response) {
+//                            var picture = response["categories"][0]["picture"];
+//                            var name = response["categories"][0]["name"];
+//                            var menu_id = response["_id"];
+//                            var category_id = response["categories"][0]["_id"];
+//                            var items = response["categories"][0]["items"];
+//                            var item_length = items.length;
+//                            var str = '';
+//                            for (var i = 0; i < item_length; i++) {
+////                                var count = i + 1;
+//
+//
+//                                str += '<div class="edit-youtube_upload_file" id="edit-youtubefile' + i + '">';
+//                                str += '<input type="text" name="linktoyoutube' + i + '" class="form-control added-fields edit-count_youtube"  myvalues="' + i + '" value ="' + items[i] + '">';
+//                                str += '</div>';
+//
+//                            }
+//                            $(".edit_wrapper_upload_youtube").html(str);
+//                            $("#modal-dialog-edit #menu_img_src").attr("src", picture);
+//                            $("#modal-dialog-edit #category-edit").val(name);
+//                            $("#modal-dialog-edit #menu_id").val(menu_id);
+//                            $("#modal-dialog-edit #menu_category_id").val(category_id);
+//                            $("#modal-dialog-edit #hidden_image").val(picture);
+//                            $("#modal-dialog-edit").modal("show");
+//                        }
+//                        else {
+//                            showError(response["error"]);
+//                        }
+//                    },
+//                   error: function(error) { 
+//                     console.log("in prfile error");
+//                     getAccessToken();
+//                    console.log(error);
+//                    showError(error);
+//                }
+//
+//                });
+//
+//            });
+//
+//            /* *******************************************************************************
+//             Edit/Update a particular Menu
+//             ******************************************************************************** */
+//            $(".edit_menu_btn").click(function() {
+//                var menu_id = $("#modal-dialog-edit #menu_id").val();
+//                var category_id = $("#modal-dialog-edit #menu_category_id").val();
+//                var name = $("#modal-dialog-edit #category-edit").val();
+//                if (ifBlank("Category", name) == false)
+//                    return false;
+//
+//                var category_array = [];
+//                $(".edit-count_youtube").each(function() {
+//                    var item = $(this).val();
+//                    if (item == "" || item == null) {
+//
+//                    }
+//                    else {
+//                        category_array.push(item)
+//                    }
+//                });
+//
+//                var img = $("#menu_image").val();
+//                if (img == "") {
+//                    var path = $("#modal-dialog-edit #hidden_image").val();
+//                    //===== Add New Ads ====//
+//                    var params = {
+//                        "biz": "55a8f91d8b70fff4391cc70e",
+//                        "items": category_array,
+//                        "picture": path,
+//                        "_id": category_id,
+//                        "name": name
+//                    }
+//                    $.ajax({
+//                        type: 'POST',
+//                        url: globalpath + 'menu/' + menu_id + '/category/' + category_id,
+//                        contentType: "application/json",
+//                        data: JSON.stringify(params),
+//                        beforeSend: function(xhr, settings) {
+//                            $(".edit_menu_btn").hide();
+//                            xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                        },
+//                        success: function(response) {
+//                            console.log("edit_menu");
+//                            console.log(response);
+//                            //return false;
+//                            $(".edit_menu_btn").show();
+//                            if (response["success"]) {
+//                                $("#modal-dialog-edit").modal("hide");
+//                                showSuccess("Congrats! Menu has been updated successfully");
+//                                setTimeout(function() {
+//                                    location.reload();
+//                                }, settimeout);
+//                            }
+//                            else {
+//                                showError(response["error"]);
+//                            }
+//                        },
+//                        error: function(error) {
+//                            console.log(error);
+//                            showError(error);
+//                        }
+//
+//                    });
+//                }
+//                else {
+//                    var formData = new FormData(document.forms.namedItem("editImage"));
+//                    $.ajax({
+//                        type: "POST",
+//                        url: globalpath + 'images',
+//                        data: formData,
+//                        processData: false,
+//                        contentType: false,
+//                        beforeSend: function(xhr, settings) {
+//                            $(".edit_ad_btn").hide();
+//                            xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                        },
+//                        success: function(response) {
+//                            console.log(response);
+//                            var path = response["path"];
+//                            console.log(path);
+//
+//                            //===== Add New Ads ====//
+//                            var params = {
+//                                "biz": "55a8f91d8b70fff4391cc70e",
+//                                "items": category_array,
+//                                "picture": path,
+//                                "_id": category_id,
+//                                "name": name
+//                            }
+//                            $.ajax({
+//                                type: 'POST',
+//                                url: globalpath + 'menu/' + menu_id + '/category/' + category_id,
+//                                contentType: "application/json",
+//                                data: JSON.stringify(params),
+//                                beforeSend: function(xhr, settings) {
+//                                    $(".edit_menu_btn").hide();
+//                                    xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+//                                },
+//                                success: function(response) {
+//                                    console.log("edit_menu");
+//                                    console.log(response);
+//                                    $(".edit_menu_btn").show();
+//                                    if (response["success"]) {
+//                                        $("#modal-dialog-edit").modal("hide");
+//                                        showSuccess("Congrats! Menu has been updated successfully");
+//                                        setTimeout(function() {
+//                                            location.reload();
+//                                        }, settimeout);
+//                                    }
+//                                    else {
+//                                        showError(response["error"]);
+//                                    }
+//                                },
+//                              error: function(error) { 
+//                     console.log("in prfile error");
+//                     getAccessToken();
+//                    console.log(error);
+//                    showError(error);
+//                }
+//
+//                            });
+//                        }
+//                    });
+//
+//                }
+//
+//            });
+
+
+        });
+
+    </script>
+
+    <!--</body>-->
+    <!--</html>-->
+
+
+    <div class ="common_footer">
+    </div>

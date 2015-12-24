@@ -1,0 +1,106 @@
+
+
+
+<style>
+    header .navbar-default .navbar-nav li .user {overflow: initial;width: 100%;}
+    .user img{width: 40px;  border-radius: 50%;}
+    .navbar-brand > img {margin-top: 1px;}
+    header .navbar-default .navbar-nav li a {font-size: 14px;color: #000;}
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+        background-color: initial;
+        color: #fff;
+    }
+    .navbar-nav>li>.dropdown-menu {margin-top: 9px;}
+    #admin_name,.caret{color:#fff;}
+    .inner_header.map_hrader {height: 65px;}
+    .header_background {
+        display: block;
+        background: url(images/header_bg.png) center top no-repeat;
+        height: 115px;
+        position: relative;
+        z-index: 6;
+        margin-top: -40px;
+    }
+    .drop-doun-bg, .drop-doun-bg_2 {
+        position: absolute;
+        left: 0px;
+        top: 35px;
+        width: 100%;
+        height: 31px;
+        background: url(images/drop-down-menu-bg.png) left top repeat-x;
+        z-index: 1;
+    }
+    .navbar-brand > img {
+        width: 120px;
+        margin-top: 35px;
+        margin-left: 19px;
+    }
+    header {
+        padding-top: 35px;
+    }
+    header .navbar-default .navbar-nav li a:hover {
+        font-size: 15px;
+        color: #eee;
+    }
+    .template_footer{margin-top: -15px;}
+    .inner_page,.main {
+        margin-top: -10px;
+    }
+    .user img {
+        width: 25px;
+    }
+    header .navbar-default .navbar-nav li a:hover {
+        font-size: 15px;
+        color: #eee;
+    }
+    #tubular-container {
+        top: 60px;
+    }
+</style>
+<div class="header_background">
+    <!--    <header class="inner_header map_hrader">-->
+    <header class="">
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2">
+                        <!--                    <ul class="nav navbar-nav">
+                                                <li>
+                                                    <input type="text" name="location" value="" class="location" placeholder="San Francisco 94122">
+                                                </li>
+                                            </ul>-->
+                        <!--                    <ul class="nav navbar-nav">
+                                                <li><a href="#business_type">+</a></li>
+                                            </ul>-->
+                    </div>
+                    <div class="logo col-lg-4 col-md-4 col-sm-4 col-xs-8"><a href="#" class="navbar-brand"><img alt="" title="logo" src="images/logo.png"></a></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-2">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown navbar-user">
+                                <a href="javascript:;" class="dropdown-toggle user" data-toggle="dropdown">
+                                    <img src="images/original.jpg">
+                                    <span class="hidden-xs" id="admin_name">Adam Schwartz</span> <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu animated fadeInLeft">
+                                    <li class="arrow"></li>
+                                    <li><a href="#business_type">Add a Business</a></li>
+                                    <li><a href="admin/setting.html">Settings</a></li>
+                                    <li><a href="admin/message.html">Messages</a></li>
+                                    <li><a href="admin/contact.html">Contacts</a></li>
+                                    <!--                                <li><a href="admin/setting.html">Edit Profile</a></li>                                -->
+                                    <li class="divider"></li>
+                                    <li><a href="#logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </div>
+
+    </header>
+</div>
+<div class="drop-doun-bg">&nbsp;</div>

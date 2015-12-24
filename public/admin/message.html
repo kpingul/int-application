@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]>&lt;!&ndash;>
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>iNeedTreez | Messages</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/plugins/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/style.min.css" rel="stylesheet" />
+    <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="assets/crossbrowserjs/html5shiv.js"></script>
+    <script src="assets/crossbrowserjs/respond.min.js"></script>
+    <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- ================== END BASE JS ================== --> 
+    <style>
+        .media-heading {color: #14BED7!important;}
+        h5 .media-heading p{color: #fff!important}
+        body{color:#fff;}
+        .message_area{display:none}
+        .alert-danger,.alert-success{display: none;}
+    </style>
+
+</head>
+<body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-default navbar-fixed-top"></div>
+        <div class ="common_sidebar"></div>
+
+        <div id="content" class="content">
+            <div class="row">
+                <!-- begin col-12 --> 
+                 <div class="alert alert-danger fade in m-b-15"></div>
+                <div class="alert alert-success fade in m-b-15"></div>
+                <div class="col-md-12">
+
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Message</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="height-sm" data-scrollbar="true">
+                                <ul class="media-list media-list-with-divider media-messaging messages">
+<!--                                    <li class="media media-sm">
+                                        <a href="javascript:;" class="pull-left">
+                                            <img src="assets/img/user-5.jpg" alt="" class="media-object rounded-corner" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">John Doe</h5>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id nunc non eros fermentum vestibulum ut id felis. Nunc molestie libero eget urna aliquet, vitae laoreet felis ultricies. Fusce sit amet massa malesuada, tincidunt augue vitae, gravida felis.</p> 
+                                            <i class="fa fa-2x fa-mail-reply"></i>
+                                            <i class="fa fa-2x fa-trash-o"></i>
+                                        </div> 
+                                        <div class="panel-footer">
+                                            <form>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control bg-silver" placeholder="Enter message">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-primary" type="button"><i class="fa fa-pencil"></i></button>
+                                                    </span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>-->
+<!--                                    <li class="media media-sm">
+                                        <a href="javascript:;" class="pull-left">
+                                            <img src="assets/img/user-6.jpg" alt="" class="media-object rounded-corner" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Terry Ng</h5>
+                                            <p>Sed in ante vel ipsum tristique euismod posuere eget nulla. Quisque ante sem, scelerisque iaculis interdum quis, eleifend id mi. Fusce congue leo nec mauris malesuada, id scelerisque sapien ultricies.</p>
+                                        </div>
+                                    </li>
+                                    <li class="media media-sm">
+                                        <a href="javascript:;" class="pull-left">
+                                            <img src="assets/img/user-8.jpg" alt="" class="media-object rounded-corner" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">Fiona Log</h5>
+                                            <p>Pellentesque dictum in tortor ac blandit. Nulla rutrum eu leo vulputate ornare. Nulla a semper mi, ac lacinia sapien. Sed volutpat ornare eros, vel semper sem sagittis in. Quisque risus ipsum, iaculis quis cursus eu, tristique sed nulla.</p>
+                                        </div>
+                                    </li>
+                                    <li class="media media-sm">
+                                        <a href="javascript:;" class="pull-left">
+                                            <img src="assets/img/user-7.jpg" alt="" class="media-object rounded-corner" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h5 class="media-heading">John Doe</h5>
+                                            <p>Morbi molestie lorem quis accumsan elementum. Morbi condimentum nisl iaculis, laoreet risus sed, porta neque. Proin mi leo, dapibus at ligula a, aliquam consectetur metus.</p>
+                                        </div>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-footer message_area">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-silver message_text" placeholder="Enter message" />
+                                    <input type="hidden" class="hidden_id" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary message_btn" type="button"><i class="fa fa-pencil"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
+    </div>
+
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+    <script src="assets/js/form-wizards.demo.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <!--================== END PAGE LEVEL JS ==================--> 
+    <script src="assets/plugins/DataTables-1.9.4/js/jquery.dataTables.js"></script>
+    <script src="assets/plugins/DataTables-1.9.4/js/data-table.js"></script>
+
+    <script src="assets/js/apps.min.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+  
+   
+
+<!--    <script src="assets/js/config.js"></script>
+    <script src="assets/js/apps.min.js"></script>-->
+    <!-- ================== END PAGE LEVEL JS ================== -->
+    <script>
+        $(document).ready(function() {
+            App.init();
+            $(".links-items").removeClass("active");
+            $("#messages").addClass("active");   
+            
+            
+            
+             
+            /* *******************************************************************************
+             View All Menu
+             ******************************************************************************** */
+            $.ajax({
+                type: 'GET',
+                url: globalpath + 'messages',
+                contentType: "application/json",
+                beforeSend: function(xhr, settings) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                },
+                success: function(response) {
+                    console.log("viewmenuresponse");
+                    console.log(response); 
+                    
+                    var response =[
+    {
+        "_id":"5586c656a70a9f27170e279f",
+        "from":{
+            "_id":"5586bef5d27a859f1491d791",
+            "username":"rnayathodan"
+        },
+        "message":"Hello how are you ?",
+        "recipient":{
+            "_id":"5586c14dd27a859f1491d794",
+            "username":"rnayathodan1"
+        },
+        "isDeleted":0,
+        "sent":"2015-07-29T14:31:25.809Z",
+        "to":[
+            {
+                "_id":"5586c14dd27a859f1491d794",
+                "username":"rnayathodan1"
+            }
+        ]
+    },
+    {
+        "_id":"5588215fd336448f1913440d",
+        "from":{
+            "_id":"5586c14dd27a859f1491d794",
+            "username":"rnayathodan1"
+        },
+        "message":"The weather is sunny today",
+        "recipient":{
+            "_id":"5586bef5d27a859f1491d791",
+            "username":"rnayathodan"
+        },
+        "isDeleted":0,
+        "sent":"2015-07-29T14:31:25.809Z",
+        "to":[
+            {
+                "_id":"5586bef5d27a859f1491d791",
+                "username":"rnayathodan"
+            }
+        ]
+    },
+    {
+        "_id":"55882155d336448f1913440c",
+        "from":{
+            "_id":"5586c14dd27a859f1491d794",
+            "username":"rnayathodan1"
+        },
+        "message":"Got to go",
+        "recipient":{
+            "_id":"5586bef5d27a859f1491d791",
+            "username":"rnayathodan"
+        },
+        "isDeleted":0,
+        "sent":"2015-07-29T14:31:25.809Z",
+        "to":[
+            {
+                "_id":"5586bef5d27a859f1491d791",
+                "username":"rnayathodan"
+            }
+        ]
+    }
+]
+                    //return false;
+                    if (response) { 
+                    console.log(response);
+                        console.log("in response")
+                        var str = '';
+                        var length = response.length;
+                        for (var i = 0; i < length; i++) {
+                            var from_id = response[i]["from"]["_id"] 
+                            var from_username = response[i]["from"]["username"]
+                            var recipent_id = response[i]["recipient"]["_id"]
+                            var message_id = response[i]["_id"]; 
+                             var message = response[i]["message"]; 
+//                            if (recipent_id == $.cookie("user_id")){ 
+                                 if (recipent_id == "5586c14dd27a859f1491d794"){
+                                  str+= '<li class="media media-sm">'
+//                                        str+= '<a href="javascript:;" class="pull-left">';
+//                                            str+= '<img src="assets/img/user-5.jpg" alt="" class="media-object rounded-corner" />';
+//                                        str+= '</a>';
+                                        str+= '<div class="media-body">';
+                                            str+= '<h5 class="media-heading">'+ from_username +'</h5>';
+                                            str+= '<p>'+ message+'</p>'; 
+                                            str+= '<i class="fa fa-2x fa-trash-o delete_message" id="'+ message_id+'" style="cursor: pointer;float:right"></i>';
+                                            str+= '<i class="fa fa-2x fa-mail-reply reply_message" id="'+ from_id+'" style="cursor: pointer;float:right;margin-right:10px;"></i>';
+
+                                       str+= '</div>'; 
+                                    str+= '</li>';   
+                            }
+                        } 
+                        $("ul.messages").html(str);
+                    }
+                },
+              error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+
+            }); 
+            
+            /* *******************************************************************************
+             Delete a particular Message
+             ******************************************************************************** */
+            $(document).delegate('.delete_message', 'click', function(e) {
+                e.preventDefault();
+                var id = $(this).attr("id");
+                var ch = confirm("Are you sure you want to delete this Message?");
+                if (ch == true) {
+                    $.ajax({
+                        type: 'DELETE',
+                        url: globalpath + 'messages/' + id,
+                        contentType: "application/json",
+                        beforeSend: function(xhr, settings) {
+                            xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            if (response['success']) {
+                                showSuccess("Congratulations! Message has been deleted successfully");
+                                setTimeout(function() {
+                                    location.reload();
+                                }, settimeout);
+                            }
+                            else {
+                                showError(response["error"]);
+                            }
+                        }
+                    });
+                }
+            });
+
+
+/* *******************************************************************************
+             On click of send message
+             ******************************************************************************** */
+            $(".reply_message").live("click",function() { 
+            $(".message_area").show();
+                      var id =   $(this).attr("id");
+                      $(".hidden_id").val(id);
+                      
+            });
+
+/* *******************************************************************************
+             On click of send message
+             ******************************************************************************** */
+            $(".message_btn").live("click",function() { 
+                    var id =    $(".hidden_id").val()
+                       var text =   $(".message_text").val();
+                      console.log("text");
+                      console.log(id) 
+                      console.log(text) 
+                var from_array = [];
+                 from_array.push(id)
+                    //  return false;
+
+                var params = {
+                    "to": from_array,
+                    "message": text
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: globalpath + 'messages',
+                    contentType: "application/json",
+                    data: JSON.stringify(params),
+                    beforeSend: function(xhr, settings) {
+                        $(".add_ads").hide();
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                    },
+                    success: function(response) {
+                        console.log("responsemenu");
+                        console.log(response);
+                        showSuccess("Message has been send successfully");
+                        setTimeout(function() {
+                            location.reload();
+                        }, settimeout);
+                    },
+                   error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+                });
+            });
+            
+            
+            
+            
+        });
+        $(window).load(function() {
+            $(".links-items").removeClass("active");
+            $("#messages").addClass("active");
+        });
+    </script> 
+    
+    
+     <div class ="common_footer"></div>

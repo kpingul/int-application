@@ -1,0 +1,180 @@
+    <style>
+        textarea {resize:none;}
+        legend.pull-left {
+
+            color: #fff;
+
+        }
+        body {
+            color: #fff;
+        }
+        .panel-body{border:1px solid;}
+        .select_btn{float:right;} 
+        .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+            background: #000;
+        } 
+        .table>thead>tr>th {
+            color: #fff;
+
+        }
+        .add_ads{  margin-bottom: 15px;
+                   margin-left: 10px;} 
+        .modal-footer{margin-top: 0px;}
+        .alert-danger{display:none}
+        .alert-success{display:none}
+        .imgdiv{max-width:150px;}
+        .imgdiv img{width:100%;}
+    </style>
+
+
+            <div class="row">
+            
+                <a href="" class="btn btn-primary btn-xl add_ads" ng-click="vm.add()">Add Ads</a> 
+                <!-- begin col-12 -->
+                <div class="col-md-12">
+                    <!-- begin panel -->
+                    <div class="panel panel-inverse">
+
+                        <div class="panel-body" ng-if="!vm.businessAdsAvailable">
+                            <h1>Add Business Ads Here</h1>
+                        </div>
+                        <div class="panel-body" ng-if="vm.businessAdsAvailable">
+
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Description</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="ad_view">
+                                        <tr class="" ng-repeat="ads in vm.businessAds track by $index">
+                                            <td><img ng-src="{{ads.imageUrl}}" width ="130px"/></td>
+                                            <td>{{::ads.description}}</td> 
+                                            <td><button  class="btn btn-primary btn-xl" ng-click="vm.edit($index)">Edit</button>
+
+                                        <!-- modal for edit ads-->
+                                            <div class="modal" ng-attr-id="{{ 'object-' + $index }}"  aria-hidden="false">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">��</button>
+                                                            <h4 class="modal-title">Edit Ads</h4>
+                                                        </div>
+                                                        <div class="modal-body"> 
+
+                                                            
+                                                            <div>
+                                                                <fieldset>
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <form  >
+                                                                                <div class="form-group">
+
+                                                                                    <div class="imgdiv">
+                                                                                        <input accept="image/*" type="file" name="file" id="menu_image" file-model="vm.updatedAdImageFile" >
+                                                                                        <img id="menu_img_src" ng-src="{{vm.businessAds[$index].imageUrl}}" preview-image data="menu_image menu_img_src"/>
+                                                                                        <span id="menu_img_text"></span> 
+                                                                                        <input type="hidden" id="add_id"/>
+                                                                                    </div>
+                                                                                </div> 
+                                                                            </form>
+
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label>Ad Description</label>
+                                                                                <div class="controls">
+                                                                                    <input type="hidden" value="" id="hidden_image">
+                                                                                    <textarea  maxlength="140" rows="4" cols="50" name="ad_copy" placeholder="Type your description" id="edit_description" class="form-control" ng-model="vm.businessAds[$index].description"></textarea>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </fieldset>
+                                                            </div> 
+                                                         
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <a href="" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                                                            <a href="" class="btn btn-sm btn-success edit_ad_btn" ng-click="vm.updateBusinessAd($index, vm.businessAds[$index].biz, vm.businessAds[$index]._id, vm.businessAds[$index].description, vm.businessAds[$index].imageUrl)">Update</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            <!-- end of edit modal for add ads-->
+
+                                            </td>
+                                            <td><a class="btn btn-primary btn-xl" ng-click="vm.removeBusinessAd(ads._id)">Delete</a></td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div> 
+
+            <!-- modal for add ads-->
+            <div class="modal" id="modal-dialog-add" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">��</button>
+                            <h4 class="modal-title">Add Ads</h4>
+                        </div>
+                        <div class="modal-body"> 
+                            <div class="alert alert-danger fade in m-b-15"></div>
+                            <div class="alert alert-success fade in m-b-15"></div>
+
+
+                            <div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form>
+                                                <div class="form-group">
+                                                    <div class="imgdiv">
+                                                        <input accept="image/*" type="file" name="file" id="ads_image" file-model="vm.fileModel">
+                                                        <img id="ads_img_src" preview-image data="ads_image ads_img_src"src="admin/assets/img/photo-camera5.png"/>
+                                                        <span id="ads_img_text"></span>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Ad Description</label>
+                                                <div class="controls">
+                                                    <textarea  maxlength="140" name="description" rows="4" cols="50" name="ad_copy" id="description" placeholder="Type your description" class="form-control" ng-model="vm.description"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div> 
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                            <button class="btn btn-sm btn-success" id="add_ad" ng-click="vm.addBusinessAd()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- end of modal for add ads--> 
+
+
+    <!-- begin scroll to top btn -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+    <!-- end scroll to top btn -->
+</div>
+

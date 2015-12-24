@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]>&lt;!&ndash;>
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>iNeedTreez | Settings</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/plugins/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/style.min.css" rel="stylesheet" />
+    <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+    <link href="assets/plugins/parsley/parsley.css" rel="stylesheet" />
+    <!-- ================== END PAGE LEVEL STYLE ================== -->
+    <link href="assets/plugins/DataTables-1.9.4/css/data-table.css" rel="stylesheet" />
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="assets/crossbrowserjs/html5shiv.js"></script>
+    <script src="assets/crossbrowserjs/respond.min.js"></script>
+    <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
+    <script src="assets/plugins/parsley/parsley.js"></script>
+    <style>
+        textarea {resize:none;}
+        legend.pull-left {
+
+            color: #fff;
+
+        }
+        body {
+            color: #fff;
+        }
+        .panel-body{border:1px solid;}
+        .select_btn{float:right;} 
+        .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+            background: #000;
+        } 
+        .table>thead>tr>th {
+            color: #fff;
+
+        }
+        .add_ads{  margin-bottom: 15px;
+                   margin-left: 10px;} 
+        .modal-footer{margin-top: 0px;}
+        .alert-danger{display:none}
+        .alert-success{display:none}
+        .imgdiv{max-width:150px;}
+        .imgdiv img{width:100%;}
+    </style>
+
+</head>
+<body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-default navbar-fixed-top">
+
+        </div>
+
+        <div class ="common_sidebar"></div>
+        <!-- end #sidebar -->
+        <!-- begin #content -->
+        <div id="content" class="content"> 
+
+            <div class="row">
+                <div class="alert alert-danger fade in m-b-15"></div>
+                <div class="alert alert-success fade in m-b-15"></div>
+                <a href="#modal-dialog" class="btn btn-primary btn-xl add_ads"  data-toggle="modal">Add Ads</a> 
+                <!-- begin col-12 -->
+                <div class="col-md-12">
+                    <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-body">
+
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Description</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="ad_view">
+                                        <!--                                        <tr class="odd gradeX">
+                                                                                    <td><img src="assets/img/profile.jpg" width ="75px"/></td>
+                                                                                    <td>Internet Explorer 4.0</td> 
+                                                                                    <td><a  href="#modal-dialog-edit" data-toggle="modal" class="btn btn-primary btn-xl">Edit</a></td>
+                                                                                    <td><a class="btn btn-primary btn-xl">Delete</a></td>
+                                        
+                                                                                </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div> 
+
+            <!-- modal for add ads-->
+            <div class="modal fade in" id="modal-dialog" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">��</button>
+                            <h4 class="modal-title">Add Ads</h4>
+                        </div>
+                        <div class="modal-body"> 
+                            <div class="alert alert-danger fade in m-b-15"></div>
+                            <div class="alert alert-success fade in m-b-15"></div>
+
+
+                            <div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form method="POST" name ="addImage" enctype="multipart/form-data" >
+                                                <div class="form-group">
+                                                    <div class="imgdiv">
+                                                        <input accept="image/*" type="file" name="file" id="ads_image">
+                                                        <img id="ads_img_src" src="assets/img/photo-camera5.png"/>
+                                                        <span id="ads_img_text"></span>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Ad Description</label>
+                                                <div class="controls">
+                                                    <textarea  maxlength="140" name="description" rows="4" cols="50" name="ad_copy" id="description" placeholder="Type your description" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div> 
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                            <a href="javascript:;" class="btn btn-sm btn-success" id="add_ad">Add</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- end of modal for add ads--> 
+            <!-- modal for edit ads-->
+            <div class="modal fade in" id="modal-dialog-edit" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">��</button>
+                            <h4 class="modal-title">Edit Ads</h4>
+                        </div>
+                        <div class="modal-body"> 
+
+                            <!--                            <form action="/" method="POST">-->
+                            <div>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form method="POST" name ="editImage" enctype="multipart/form-data" >
+                                                <div class="form-group">
+
+                                                    <div class="imgdiv">
+                                                        <input accept="image/*" type="file" name="file" id="menu_image">
+                                                        <img id="menu_img_src" src="assets/img/photo-camera5.png"/>
+                                                        <span id="menu_img_text"></span> 
+                                                        <input type="hidden" id="add_id"/>
+                                                    </div>
+                                                </div> 
+                                            </form>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Ad Description</label>
+                                                <div class="controls">
+                                                    <input type="hidden" value="" id="hidden_image">
+                                                    <textarea  maxlength="140" rows="4" cols="50" name="ad_copy" placeholder="Type your description" id="edit_description" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                            </div> 
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Close</a>
+                            <a href="javascript:;" class="btn btn-sm btn-success edit_ad_btn">Update</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- end of edit modal for add ads-->
+        </div>
+    </div>
+    <!-- end #content -->
+
+    <!-- begin scroll to top btn -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+    <!-- end scroll to top btn -->
+</div>
+<!-- ================== BEGIN PAGE LEVEL JS ================== -->
+<script src="assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+<script src="assets/js/form-wizards.demo.min.js"></script>
+<script src="assets/js/config.js"></script>
+<!--================== END PAGE LEVEL JS ==================--> 
+<script src="assets/plugins/DataTables-1.9.4/js/jquery.dataTables.js"></script>
+<script src="assets/plugins/DataTables-1.9.4/js/data-table.js"></script>
+<script src="assets/js/apps.min.js"></script>
+<!-- ================== END PAGE LEVEL JS ================== -->
+<script>
+    $(document).ready(function() {
+        App.init();
+        FormWizard.init();
+        $(".links-items").removeClass("active");
+        $("#settings, #ads").addClass("active");
+        //$("#data-table").dataTable();
+    });
+    $(window).load(function() {
+        $(".links-items").removeClass("active");
+        $("#settings, #ads").addClass("active");
+    });
+</script>
+<script>
+    $(document).ready(function() {
+
+        /* *******************************************************************************
+         View All Ads
+         ******************************************************************************** */
+        $.ajax({
+            type: 'GET',
+            url: globalpath + 'ad/55a8f91d8b70fff4391cc70e',
+            contentType: "application/json",
+            beforeSend: function(xhr, settings) {
+                xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+            },
+            success: function(response) {
+                console.log(response);
+                if (response) {
+                    var str = '';
+                    var length = response.length;
+                    for (var i = 0; i < length; i++) {
+                        var image = response[i]["imageUrl"];
+                        var description = response[i]["description"];
+                        var add_id = response[i]["_id"];
+                        str += '<tr class="odd gradeX">';
+                        str += '<td><img src="' + image + '" width ="75px"/></td>';
+                        str += '<td>' + description + '</td>';
+                        str += '<td><a  href="javascript:;" id="' + add_id + '" class="btn btn-primary btn-xl edit_ad_click">Edit</a></td>';
+                        str += '<td><a href="javascript:;" class="btn btn-primary btn-xl delete_ad" id="' + add_id + '">Delete</a></td>';
+                        str += '</tr>';
+                    }
+                    $("tbody.ad_view").html(str);
+                    $("#example").dataTable();
+                }
+                else {
+                    showError(response["error"]);
+                }
+            },
+           error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+        });
+
+        /* *******************************************************************************
+         Add a particular Ad
+         ******************************************************************************** */
+        $("#add_ad").click(function() {
+            var description = $("#description").val();
+            if (ifBlank("Description", description) == false)
+                return false;
+var img = $("#ads_image").val();
+            if (img == "") {
+               showError("Please choose image");
+                return false;
+            }
+            else{
+            var formData = new FormData(document.forms.namedItem("addImage"));
+            $.ajax({
+                type: "POST",
+                url: globalpath + 'images',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function(xhr, settings) {
+                    $("#add_ad").hide();
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                },
+                success: function(response) {
+                    console.log(response);
+                    var path = response["path"];
+                    console.log(path);
+                    //===== Add New Ads ====//
+                    var params = {
+                        "biz": "55a8f91d8b70fff4391cc70e",
+                        "description": description,
+                        "imageUrl": path
+                    }
+                    $.ajax({
+                        type: 'POST',
+                        url: globalpath + 'ad/',
+                        contentType: "application/json",
+                        data: JSON.stringify(params),
+                        beforeSend: function(xhr, settings) {
+                            xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            $("#add_ad").show();
+                            if (response["success"]) {
+                                $("#modal-dialog").modal("hide");
+                                showSuccess("Ad has been created successfully");
+                                setTimeout(function() {
+                                    location.reload();
+                                }, settimeout);
+                            }
+                            else {
+                                showError(response["error"]);
+                            }
+                        },
+                       error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+
+                    });
+                }
+            }); 
+        }
+        });
+
+        /* *******************************************************************************
+         Show Prefilled Data of a particular Ad
+         ******************************************************************************** */
+        $(".edit_ad_click").live("click", function() {
+            var id = $(this).attr("id");
+            $.ajax({
+                type: 'GET',
+                url: globalpath + 'ad/' + id,
+                contentType: "application/json",
+                beforeSend: function(xhr, settings) {
+                    xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                },
+                success: function(response) {
+                    console.log("in get ad")
+                    console.log(response);
+                    if (response) {
+                        var image = response["imageUrl"];
+                        var description = response["description"];
+                        var add_id = response["_id"];
+                        $("#modal-dialog-edit #edit_description").val(description);
+                        $("#modal-dialog-edit #menu_img_src").attr("src", image);
+                        $("#add_id").val(add_id);
+                        $("#hidden_image").val(image);
+                        $("#modal-dialog-edit").modal("show");
+                    }
+                    else {
+                        showError(response["error"]);
+                    }
+                },
+              error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+
+            });
+
+        });
+
+        /* *******************************************************************************
+         Edit/Update a particular Ad
+         ******************************************************************************** */
+        $(".edit_ad_btn").click(function() {
+            var description = $("#edit_description").val();
+            var add_id = $("#add_id").val();
+            if (ifBlank("Description", description) == false)
+                return false;
+
+            var img = $("#menu_image").val();
+            if (img == "") {
+                var path = $("#hidden_image").val();
+                //===== Add New Ads ====//
+                var params = {
+                    "biz": "55a8f91d8b70fff4391cc70e",
+                    "description": description,
+                    "imageUrl": path,
+                    "_id": add_id
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: globalpath + 'ad/' + add_id,
+                    contentType: "application/json",
+                    data: JSON.stringify(params),
+                    beforeSend: function(xhr, settings) {
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        $(".edit_ad_btn").show();
+                        if (response["success"]) {
+                            $("#modal-dialog-edit").modal("hide");
+                            showSuccess("Congrats! Ad has been updated successfully");
+                            setTimeout(function() {
+                                location.reload();
+                            }, settimeout);
+                        }
+                        else {
+                            showError(response["error"]);
+                        }
+                    },
+                  error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+
+                });
+            }
+            else {
+                var formData = new FormData(document.forms.namedItem("editImage"));
+                $.ajax({
+                    type: "POST",
+                    url: globalpath + 'images',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function(xhr, settings) {
+                        $(".edit_ad_btn").hide();
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        var path = response["path"];
+                        console.log(path);
+
+                        //===== Add New Ads ====//
+                        var params = {
+                            "biz": "55a8f91d8b70fff4391cc70e",
+                            "description": description,
+                            "imageUrl": path,
+                            "_id": add_id
+                        }
+
+                        $.ajax({
+                            type: 'POST',
+                            url: globalpath + 'ad/' + add_id,
+                            contentType: "application/json",
+                            data: JSON.stringify(params),
+                            beforeSend: function(xhr, settings) {
+                                xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                            },
+                            success: function(response) {
+                                console.log(response);
+                                $(".edit_ad_btn").show();
+                                if (response["success"]) {
+                                    $("#modal-dialog-edit").modal("hide");
+                                    showSuccess("Congrats! Ad has been updated successfully");
+                                    setTimeout(function() {
+                                        location.reload();
+                                    }, settimeout);
+                                }
+                                else {
+                                    showError(response["error"]);
+                                }
+                            },
+                           error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+
+                        });
+                    }
+                });
+
+            }
+
+        });
+
+        /* *******************************************************************************
+         Delete a particular Ad
+         ******************************************************************************** */
+        $(document).delegate('a.delete_ad', 'click', function(e) {
+            e.preventDefault();
+            var id = $(this).attr("id");
+            var ch = confirm("Are you sure you want to delete this Ad?");
+            if (ch == true) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: globalpath + 'ad/' + id,
+                    contentType: "application/json",
+                    beforeSend: function(xhr, settings) {
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        if (response['success']) {
+                            showSuccess("Congratulations! Ad has been deleted successfully");
+                            setTimeout(function() {
+                                location.reload();
+                            }, settimeout);
+                        }
+                        else {
+                            showError(response["error"]);
+                        }
+                    }
+                });
+            }
+        });
+
+        /* *******************************************************************************
+         Show Image on change in Add Ad popup
+         ******************************************************************************** */
+        $("#ads_image").live("change", function() {
+            var imageFiles = document.getElementById('ads_image').files;    //id of file
+            var file = this.files[0];
+            if (imageFiles[0])
+            {
+                var image_ext = imageFiles[0]['type'].replace("image/", "");
+                var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+                var ext_check = jQuery.inArray(image_ext, valid_ext);
+                if (ext_check >= 0)
+                {
+                    var reader = new FileReader();
+                    var image_data = "";
+                    reader.onload = function(event) {
+                        object = {};
+                        object.filename = file.name;
+                        object.data = event.target.result;
+                        image_data = object.data;
+                        $('#ads_img_src').attr("src", image_data);
+                    };
+                    reader.readAsDataURL(file);
+                    var filename = $('#ads_image').val().replace(/C:\\fakepath\\/i, '');
+                    var len = filename.length;
+                    if (len > 7)
+                    {
+                        filename = filename.substr(0, 7) + '...';
+                    }
+                    $('#ads_img_text').html(filename).attr("style", "color:#fff;");
+                }
+                else
+                {
+                    alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+                }
+            }
+        });
+
+        /* *******************************************************************************
+         Show Image on change in Edit Ad popup
+         ******************************************************************************** */
+        $("#menu_image").live("change", function() {
+            var imageFiles = document.getElementById('menu_image').files;    //id of file
+            var file = this.files[0];
+            if (imageFiles[0]) {
+                var image_ext = imageFiles[0]['type'].replace("image/", "");
+                var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+                var ext_check = jQuery.inArray(image_ext, valid_ext);
+                if (ext_check >= 0) {
+                    var reader = new FileReader();
+                    var image_data = "";
+                    reader.onload = function(event) {
+                        object = {};
+                        object.filename = file.name;
+                        object.data = event.target.result;
+                        image_data = object.data;
+                        $('#menu_img_src').attr("src", image_data);
+                    };
+                    reader.readAsDataURL(file);
+                    var filename = $('#menu_image').val().replace(/C:\\fakepath\\/i, '');
+                    var len = filename.length;
+                    if (len > 7)
+                    {
+                        filename = filename.substr(0, 7) + '...';
+                    }
+                    $('#menu_img_text').html(filename).attr("style", "color:#fff;");
+                }
+                else {
+                    alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+                }
+            }
+        });
+
+
+
+    });
+
+</script>
+
+<!--</body>-->
+<!--</html>-->
+
+
+<div class ="common_footer">
+</div>

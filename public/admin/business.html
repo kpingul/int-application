@@ -1,0 +1,693 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]>&lt;!&ndash;>
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>iNeedTreez | Settings</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="assets/plugins/jquery-ui-1.10.4/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="assets/plugins/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/plugins/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/style.min.css" rel="stylesheet" />
+    <link href="assets/css/style-responsive.min.css" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+    <!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
+    <link href="assets/plugins/parsley/parsley.css" rel="stylesheet" />
+    <!-- ================== END PAGE LEVEL STYLE ================== -->
+
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="assets/plugins/jquery-1.8.2/jquery-1.8.2.min.js"></script>
+    <script src="assets/plugins/jquery-ui-1.10.4/ui/minified/jquery-ui.min.js"></script>
+    <script src="assets/plugins/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="assets/crossbrowserjs/html5shiv.js"></script>
+    <script src="assets/crossbrowserjs/respond.min.js"></script>
+    <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
+    <script src="assets/plugins/parsley/parsley.js"></script>
+    <style>
+        textarea {resize:none;}
+        legend.pull-left {
+
+            color: #fff;
+
+        }
+        body {
+            color: #fff;
+        }
+        .panel-body{border:1px solid;}
+        .select_btn{float:right;}
+        .alert-danger{display: none}
+        .alert-success{display: none}
+    </style>
+
+</head>
+<body>
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-default navbar-fixed-top">
+
+        </div>
+
+        <div class ="common_sidebar"></div>
+        <!-- end #sidebar -->
+        <!-- begin #content -->
+        <div id="content" class="content">
+
+            <!-- begin row -->
+            <div class="row">
+                <!-- begin col-12 -->
+                <div class="col-md-12">
+                    <!-- begin panel -->
+                    <div class="panel panel-inverse">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Add Business</h4>
+                        </div>
+
+                        <div class="panel-body">
+                            <form action="/" method="POST"> 
+                                <div class="alert alert-danger fade in m-b-15"></div>
+                                <div class="alert alert-success fade in m-b-15"></div>
+                                <div>
+                                    <fieldset>
+                                        <legend class="pull-left width-full">Information</legend> 
+
+                                        <!-- begin row -->
+                                        <form class="form-horizontal form-bordered" data-validate="parsley">
+                                            <div class="row">
+                                                <!-- begin col-6 -->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Name</label>
+                                                        <input type="text" name="name" placeholder="abc" class="form-control  parsley-validated" data-required="true" />
+                                                    </div>
+                                                </div>
+                                                <!-- end col-6 -->
+                                                <!-- begin col-6 -->
+                                                <!--                                                    <div class="col-md-6">
+                                                                                                        <div class="form-group">
+                                                                                                            <label> Address</label>
+                                                                                                            <input type="text" name="address" placeholder="abc" class="form-control  parsley-validated" data-required="true"/>
+                                                                                                        </div>
+                                                                                                    </div>--> 
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Website</label>
+                                                        <!--<input class="form-control parsley-validated" type="text" id="website" name="website" data-trigger="change" data-type="url" placeholder="url">-->
+                                                        <input type="text" id="website" name="website" data-trigger="change" placeholder="someone@example.com" class="form-control parsley-validated" data-trigger="change" data-type="url"/>
+                                                    </div>
+                                                </div>
+                                                <!-- end col-6 -->
+                                            </div>
+
+                                            <div class="row"> 
+                                                <!-- begin col-6 -->
+                                                <div class="col-md-6">
+
+                                                    <div class="row">
+                                                        <h2 style="color:#fff;">Business Address</h2>
+                                                    </div>
+                                                    <div class="row"> 
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label>Street</label>
+                                                                <input type="text" name="street" data-trigger="change" placeholder="abc" id="street" class="form-control parsley-validated" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row"> 
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label>City</label>
+                                                                <input type="text" name="city" id="city"  placeholder="city" class="form-control  parsley-validated" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row"> 
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label>State</label>
+                                                                <input type="text" name="state" data-trigger="change" placeholder="state" id="state" class="form-control parsley-validated" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row"> 
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label> Country</label>
+                                                                <input type="text" name="country" placeholder="country" class="form-control  parsley-validated" data-required="true"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row"> 
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label> ZipCode</label> 
+
+                                                                <input class="form-control parsley-validated" type="text" id="digits" maxlength="6" name="zipcode" data-trigger="change" data-type="digits" placeholder="Digits">
+
+                                                                <!--                                                                <input type="text" name="address" placeholder="abc" class="form-control  parsley-validated" data-required="true"/>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- End of Address -->
+
+                                                <div class="col-md-6"> 
+                                                    <div class="row">
+                                                        <h2 style="color:#fff;">Business Hours</h2>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label> Monday</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="mon_open_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="mon_close_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>Tuesday</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="tue_open_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="tue_close_hr" name="selectBox" data-required="true">
+                                                                </select>        
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>Wednesday</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="wed_open_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="wed_close_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label> Thursday</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="thu_open_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="thu_close_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label>Friday</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="fri_open_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="fri_close_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label> Saturday</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="sat_open_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="sat_close_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label> Sunday</label>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="sun_open_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <div class="form-group">
+                                                                <select class="form-control parsley-validated dymamic_time" id="sun_close_hr" name="selectBox" data-required="true">
+                                                                </select>                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div> <!-- End of Business Hours -->
+
+                                            </div> 
+
+                                            <div class="row"> 
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Phone Number</label>
+                                                        <!--<input class="form-control parsley-validated" type="text" id="data-phone" data-type="phone" placeholder="(XXX) XXXX XXX">-->
+                                                        <input type="text" name="phone" id="data-phone" data-type="phone" placeholder="(XXX) XXXX XXX" maxlength="11" class="form-control  parsley-validated" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:;" class="btn btn-primary btn-lg m-r-5 select_btn" id="business_btn" >Save</a>
+                                    </fieldset>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-12 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end #content -->
+
+        <!-- begin scroll to top btn -->
+        <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+        <!-- end scroll to top btn -->
+    </div>
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+    <script src="assets/plugins/bootstrap-wizard/js/bwizard.js"></script>
+    <script src="assets/js/form-wizards.demo.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <!--================== END PAGE LEVEL JS ==================-->
+    <script src="assets/js/apps.min.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+    <script>
+        $(document).ready(function() {
+            App.init();
+            FormWizard.init();
+            $(".links-items").removeClass("active");
+            $("#settings, #business").addClass("active");
+        });
+        $(window).load(function() {
+            $(".links-items").removeClass("active");
+            $("#settings, #business").addClass("active");
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            console.log("lokesh");
+            console.log($.cookie("access_token"));
+            console.log("lokesh");
+            
+            $(".dymamic_time").html(global_business_hours);
+            var url = window.location.href;
+            var category_id = url.split("id=")[1]
+            console.log("url")
+            console.log(url)
+            console.log(category_id)
+
+            $("#business_btn").click(function() {
+
+                var name = $('input[name=name]').val();
+                var website = $('input[name=website]').val();
+                var website = $('input[name=website]').val();
+                var street = $('input[name=street]').val();
+                var city = $('input[name=city]').val();
+                var state = $('input[name=state]').val();
+                var country = $('input[name=country]').val();
+                var zipcode = $('input[name=zipcode]').val();
+                var phone = $('input[name=phone]').val();
+
+                var mon_open_hr = $("#mon_open_hr").val();
+                var tue_open_hr = $("#tue_open_hr").val();
+                var wed_open_hr = $("#wed_open_hr").val();
+                var thu_open_hr = $("#thu_open_hr").val();
+                var fri_open_hr = $("#fri_open_hr").val();
+                var sat_open_hr = $("#sat_open_hr").val();
+                var sun_open_hr = $("#sun_open_hr").val();
+                var mon_close_hr = $("#mon_close_hr").val();
+                var tue_close_hr = $("#tue_close_hr").val();
+                var wed_close_hr = $("#wed_close_hr").val();
+                var thu_close_hr = $("#thu_close_hr").val();
+                var fri_close_hr = $("#fri_close_hr").val();
+                var sat_close_hr = $("#sat_close_hr").val();
+                var sun_close_hr = $("#sun_close_hr").val();
+
+
+
+
+                //***** Validations *****//
+                if (ifBlank("Name", name) == false)
+                    return false;
+                if (ifBlank("Street", street) == false)
+                    return false;
+                if (ifBlank("Country", country) == false)
+                    return false;
+                if (ifBlank("Zipcode", zipcode) == false)
+                    return false;
+                if (ifNumeric("Zipcode", zipcode) == false)
+                    return false;
+                if (ifBlank("Phone", phone) == false)
+                    return false;
+                if (ifNumeric("Phone", phone) == false)
+                    return false;
+
+                var res = getLatLongByAddress(street, city, state, country, zipcode);
+
+
+                var address = street + ', ' + city + ', ' + state + ', ' + country + ', ' + zipcode;
+                var latitude = 0;
+                var longitude = 0;
+                $.ajax({
+                    url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&sensor=true",
+                    type: "POST",
+                    dataType: 'JSON',
+                    async: false,
+                    success: function(res) {
+                        latitude = res.results[0].geometry.location.lat;
+                        longitude = res.results[0].geometry.location.lng;
+                    }
+                });
+
+
+                var url = window.location.href;
+                var category_array = [];
+                var category = url.split("?id=")[1];
+                category_array.push(category);
+                console.log("category_array")
+                console.log(category_array)
+
+                //**** Create JSON ****//
+                var params = {
+                    "name": name,
+                    "phone": phone,
+                    "website": website,
+                    "owner": $.cookie("user_id"),
+                    "category": category_array,
+                    "address": {
+                        "street": street,
+                        "country": country,
+                        "state": state,
+                        "city": city,
+                        "postalCode": zipcode,
+                        "lat": latitude,
+                        "long": longitude
+                    },
+                    "hours": {
+                        "mon": {
+                            "open": {
+                                "hh": mon_open_hr.split(":")[0],
+                                "mm": mon_open_hr.split(":")[1]
+                            },
+                            "close": {
+                                "hh": mon_close_hr.split(":")[0],
+                                "mm": mon_close_hr.split(":")[1]
+                            }
+                        },
+                        "tue": {
+                            "open": {
+                                "hh": tue_open_hr.split(":")[0],
+                                "mm": tue_open_hr.split(":")[1]
+                            },
+                            "close": {
+                                "hh": tue_close_hr.split(":")[0],
+                                "mm": tue_close_hr.split(":")[1]
+                            }
+                        },
+                        "wed": {
+                            "open": {
+                                "hh": wed_open_hr.split(":")[0],
+                                "mm": wed_open_hr.split(":")[1]
+                            },
+                            "close": {
+                                "hh": wed_close_hr.split(":")[0],
+                                "mm": wed_close_hr.split(":")[1]
+                            }
+                        },
+                        "thu": {
+                            "open": {
+                                "hh": thu_open_hr.split(":")[0],
+                                "mm": thu_open_hr.split(":")[1]
+                            },
+                            "close": {
+                                "hh": thu_close_hr.split(":")[0],
+                                "mm": thu_close_hr.split(":")[1]
+                            }
+                        },
+                        "fri": {
+                            "open": {
+                                "hh": fri_open_hr.split(":")[0],
+                                "mm": fri_open_hr.split(":")[1]
+                            },
+                            "close": {
+                                "hh": fri_close_hr.split(":")[0],
+                                "mm": fri_close_hr.split(":")[1]
+                            }
+                        },
+                        "sat": {
+                            "open": {
+                                "hh": sat_open_hr.split(":")[0],
+                                "mm": sat_open_hr.split(":")[1]
+                            },
+                            "close": {
+                                "hh": sat_close_hr.split(":")[0],
+                                "mm": sat_close_hr.split(":")[1]
+                            }
+                        },
+                        "sun": {
+                            "open": {
+                                "hh": sun_open_hr.split(":")[0],
+                                "mm": sun_open_hr.split(":")[1]
+                            },
+                            "close": {
+                                "hh": sun_close_hr.split(":")[0],
+                                "mm": sun_close_hr.split(":")[1]
+                            }
+                        }
+                    }
+
+                }
+
+
+                $.ajax({
+                    //dataType: 'JSON',
+                    type: 'POST',
+                    url: globalpath + 'businesses',
+                    contentType: "application/json",
+                    data: JSON.stringify(params),
+                    beforeSend: function(xhr, settings) {
+                        xhr.setRequestHeader('Authorization', 'Bearer ' + $.cookie("access_token"));
+                    },
+                    success: function(response) {
+                        console.log(response);
+                       // return false;
+                       // if (response["username"] != "") {
+                            showSuccess("Bussiness added successfully");
+                            setTimeout(function() {
+                               window.location.href ="business.html"
+                            }, settimeout);
+                       // }
+                    },
+                   error: function(error) { 
+                     console.log("in prfile error");
+                     getAccessToken();
+                    console.log(error);
+                    showError(error);
+                }
+                });
+
+
+            });
+
+
+//            $("#business_logo").live("change", function() {
+//                var imageFiles = document.getElementById('business_logo').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#add-dist-sales-img').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#business_logo').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#add-sales-rep-sr-image-name').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//            $("#bussiness_image").live("change", function() {
+//                var imageFiles = document.getElementById('bussiness_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#bussiness_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#bussiness_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#bussiness_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//
+//            $("#ads_image").live("change", function() {
+//                var imageFiles = document.getElementById('ads_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#ads_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#ads_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#ads_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+//
+//
+//            $("#menu_image").live("change", function() {
+//                var imageFiles = document.getElementById('menu_image').files;    //id of file
+//                var file = this.files[0];
+//                if (imageFiles[0])
+//                {
+//                    var image_ext = imageFiles[0]['type'].replace("image/", "");
+//                    var valid_ext = ["gif", "jpeg", "jpg", "png", "JPG", "JPEG", "GIF", "PNG"];
+//                    var ext_check = jQuery.inArray(image_ext, valid_ext);
+//                    if (ext_check >= 0)
+//                    {
+//                        var reader = new FileReader();
+//                        var image_data = "";
+//                        reader.onload = function(event) {
+//                            object = {};
+//                            object.filename = file.name;
+//                            object.data = event.target.result;
+//                            image_data = object.data;
+//                            $('#menu_img_src').attr("src", image_data);
+//                        };
+//                        reader.readAsDataURL(file);
+//                        var filename = $('#menu_image').val().replace(/C:\\fakepath\\/i, '');
+//                        var len = filename.length;
+//                        if (len > 7)
+//                        {
+//                            filename = filename.substr(0, 7) + '...';
+//                        }
+//                        $('#menu_img_text').html(filename).attr("style", "color:#fff;");
+//                    }
+//                    else
+//                    {
+//                        alert("Please select correct file type from the following: gif,jpeg,jpg,png,JPG,JPEG,GIF or PNG");
+//                    }
+//                }
+//            });
+
+        });
+
+    </script>
+
+    <!--</body>-->
+    <!--</html>-->
+
+
+    <div class ="common_footer">
+    </div>

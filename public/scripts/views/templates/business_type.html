@@ -1,0 +1,188 @@
+<style type="text/css">
+    body,td,th {
+        font-family: Roboto, sans-serif;
+    }
+    .business_type ul {padding-top: 60px;} 
+    .login p {
+        background: none;
+        font-size: 18px;
+        color:#14BED7;
+        position: initial;
+    } 
+    .add_business{cursor:pointer}
+</style>
+
+<div class="template_header">
+
+</div>
+<div class="main">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 login_page">
+        <div class="container login">
+            <div class="business_type">
+                <h4>What Type Business ?</h4>
+                <ul class="categories_subcategories_data">
+                    <!--                    <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                            <a href="admin/setting.html"><img src="images/icon2.png">
+                                                <img class="on_hover" src="images/icon2_b.png">
+                                                <span>Dispensary</span> 
+                                                <span>Delivery</span> 
+                                                <span>Transport</span>
+                                            </a>
+                                        </li>
+                                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                            <a href="admin/setting.html">
+                                                <img src="images/icon3.png">
+                                                <img class="on_hover" src="images/icon3_b.png">
+                                                <span>Growing</span>
+                                                <span>Vape/Smoke</span>
+                                            </a>
+                                        </li>
+                                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                            <a href="admin/setting.html">
+                                                <img src="images/icon4.png">
+                                                <img class="on_hover" src="images/icon4_b.png">
+                                                <span>Edible</span> 
+                                                <span>Wearible</span> 
+                                                <span>Health Personal Care</span>
+                                            </a>
+                                        </li>
+                                        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                            <a href="admin/setting.html">
+                                                <img src="images/icon1.png">
+                                                <img class="on_hover" src="images/icon1_b.png">
+                                                <span>Doctors</span> 
+                                                <span>Attorneys</span> 
+                                                <span>Security</span>
+                                            </a>
+                                        </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="template_footer">
+
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="../bootstrap-3.2.0/docs/dist/js/bootstrap.js"></script> 
+
+background 
+
+<script type="text/javascript" src="js/jquery.tubular.1.0.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+
+calender 
+<script src="js/foundation-datepicker.js"></script> 
+<script>
+                        $(function () {
+                                window.prettyPrint && prettyPrint();
+                                $('#dp1').fdatepicker({
+                                        format: 'mm-dd-yyyy'
+                                });
+                                $('#dp2').fdatepicker({
+                                        closeButton: true
+                                });
+                                $('#dp3').fdatepicker();
+                                $('#dp3').fdatepicker();
+                                $('#dp-margin').fdatepicker();
+                                $('#dpMonths').fdatepicker();
+                                var startDate = new Date(2012, 1, 20);
+                                var endDate = new Date(2012, 1, 25);
+                                $('#dp4').fdatepicker()
+                                        .on('changeDate', function (ev) {
+                                        if (ev.date.valueOf() > endDate.valueOf()) {
+                                                $('#alert').show().find('strong').text('The start date can not be greater then the end date');
+                                        } else {
+                                                $('#alert').hide();
+                                                startDate = new Date(ev.date);
+                                                $('#startDate').text($('#dp4').data('date'));
+                                        }
+                                        $('#dp4').fdatepicker('hide');
+                                });
+                                $('#dp5').fdatepicker()
+                                        .on('changeDate', function (ev) {
+                                        if (ev.date.valueOf() < startDate.valueOf()) {
+                                                $('#alert').show().find('strong').text('The end date can not be less then the start date');
+                                        } else {
+                                                $('#alert').hide();
+                                                endDate = new Date(ev.date);
+                                                $('#endDate').text($('#dp5').data('date'));
+                                        }
+                                        $('#dp5').fdatepicker('hide');
+                                });
+                                // implementation of disabled form fields
+                                var nowTemp = new Date();
+                                var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+                                var checkin = $('#dpd1').fdatepicker({
+                                        onRender: function (date) {
+                                                return date.valueOf() < now.valueOf() ? 'disabled' : '';
+                                        }
+                                }).on('changeDate', function (ev) {
+                                        if (ev.date.valueOf() > checkout.date.valueOf()) {
+                                                var newDate = new Date(ev.date)
+                                                newDate.setDate(newDate.getDate() + 1);
+                                                checkout.update(newDate);
+                                        }
+                                        checkin.hide();
+                                        $('#dpd2')[0].focus();
+                                }).data('datepicker');
+                                var checkout = $('#dpd2').fdatepicker({
+                                        onRender: function (date) {
+                                                return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+                                        }
+                                }).on('changeDate', function (ev) {
+                                        checkout.hide();
+                                }).data('datepicker');
+                        });
+                </script> 
+ FlexSlider  
+<script defer src="js/jquery.flexslider.js"></script> 
+<script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script> 
+
+FREE WALL 
+<script type="text/javascript" src="js/freewall.js"></script> 
+<script type="text/javascript">
+                        
+                        var colour = [
+                                
+                        ];
+
+                        $(".brick").each(function() {
+                                this.style.backgroundColor =  colour[colour.length * Math.random() << 0];
+                        });
+
+                        $(function() {
+                                var wall = new freewall("#freewall");
+                                wall.reset({
+                                        selector: '.brick',
+                                        animate: true,
+                                        cellW: 160,
+                                        cellH: 160,
+                                        onResize: function() {
+                                                wall.fitWidth();
+                                        }
+                                });
+                                wall.addCustomEvent('onBlockLoad', function(setting){
+                                        console.log(setting);
+                                });
+                                wall.fitWidth();
+                        });
+                </script>
+</body>
+</html>-->

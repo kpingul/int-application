@@ -1,0 +1,25 @@
+{
+  "name": "iNeedTreez",
+  "version": "0.0.0",
+  "homepage": "https://github.com/marcellscarlett/iNeedTreez",
+  "description": "iNeedTreez",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-css": "~1.0.7",
+    "angular-datatables": "~0.5.0",
+    "angular-flexslider": "~1.3.2",
+    "angular-vidbg": "angular-video-background#~0.0.12"
+  },
+  "devDependencies": {
+    "angular-modal-service": "~0.6.9"
+  }
+}

@@ -1,0 +1,17 @@
+<div class="slider_map" add-over-flow data="remove"> 
+    <div> 
+    	<!-- 
+			activateMap is a custom attribute directive that
+			that passes the current latitute and longitude of the
+			business information  binded to the profile controller
+    	-->
+   		<div 
+            id="map"
+            class="profile-map"
+            activate-map 
+            lat="{{vm.businessInformation.lat}}" 
+            lng="{{vm.businessInformation.lng}}">
+      </div>
+
+    </div>
+</div><!-- end of slider map -->

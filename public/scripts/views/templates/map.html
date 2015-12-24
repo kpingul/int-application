@@ -1,0 +1,218 @@
+<style type="text/css">
+    body,td,th {
+        font-family: Roboto, sans-serif;
+    } 
+    
+     .address{
+        padding-left: 170px;
+        font-size: 24px;
+    }
+    .main{
+    color: #fff;
+    margin-top: -10px;
+    padding: 50px;
+    width: 100%;
+    }
+    .website:hover{
+        color:#14bed7;
+        cursor:pointer;
+    }
+    
+    
+</style>
+
+<div class="template_header">
+
+</div>
+<div class="main">
+
+  <div class="search_left">
+    <div class="slider_map"> 
+        
+     
+    
+        <div> 
+<!--               <div id='map' style="position: initial;"></div>
+<pre id='coordinates' class='ui-coordinates'></pre> -->
+<ul>
+    <div id='map' style="height: 450px;">
+        
+    </div>
+</ul>
+<!--          <ul >
+            <li> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.3794518650775!2d-122.4376!3d37.75769999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1423854365705" width="600" height="450" frameborder="0" style="border:0"></iframe></li>
+           
+            
+          </ul>-->
+        </div>
+      
+    </div> 
+
+
+    <div class="person_name">
+    <div class="container">
+    <h2 class ="name"></h2>
+     <p class="address"></p>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 map">
+    <div class="profile_image col-lg-2 col-md-2 col-md-2 col-xs-12">
+    <a href="#"><img src="images/original.jpg"></a>
+    
+    <h3 class="website"></h3>
+    </div>
+    <div class="col-lg-6 col-md-6 col-md-6 col-xs-12 middel">
+    	
+        <ul>
+            <li><a href="#"><img src="images/message.png"></a></li>
+            <li><a href="javascript:;" class ="add_contact">+</a></li>
+            <li><a href="#"><img src="images/phone.png"></a></li>
+            
+          </ul>
+    
+    </div>
+    <div class="side_box col-lg-4 col-md-4 col-md-4 col-xs-12">
+		  <div class="uper"><i class="fa fa-map-marker"></i>30 Miles Away</div>
+          <div class="buttons">
+          <a href="#menu">Menu</a>
+           <a href="#map">Map</a>
+          </div>
+          <div class="bottom">
+          <p>We are located between Williamsburg and Manhattan bridges, close to all tourists attractions so you will never need to take a train to see the city's best. Room fits two (full size bed) plus you have access to the whole apartment.</p>
+          </div>  
+    </div>
+    </div>
+    </div>
+    </div>
+    
+  </div>
+ 
+</div>
+<div class="template_footer">
+
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="../bootstrap-3.2.0/docs/dist/js/bootstrap.js"></script> 
+
+background 
+
+<script type="text/javascript" src="js/jquery.tubular.1.0.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+
+calender 
+<script src="js/foundation-datepicker.js"></script> 
+<script>
+			$(function () {
+				window.prettyPrint && prettyPrint();
+				$('#dp1').fdatepicker({
+					format: 'mm-dd-yyyy'
+				});
+				$('#dp2').fdatepicker({
+					closeButton: true
+				});
+				$('#dp3').fdatepicker();
+				$('#dp3').fdatepicker();
+				$('#dp-margin').fdatepicker();
+				$('#dpMonths').fdatepicker();
+				var startDate = new Date(2012, 1, 20);
+				var endDate = new Date(2012, 1, 25);
+				$('#dp4').fdatepicker()
+					.on('changeDate', function (ev) {
+					if (ev.date.valueOf() > endDate.valueOf()) {
+						$('#alert').show().find('strong').text('The start date can not be greater then the end date');
+					} else {
+						$('#alert').hide();
+						startDate = new Date(ev.date);
+						$('#startDate').text($('#dp4').data('date'));
+					}
+					$('#dp4').fdatepicker('hide');
+				});
+				$('#dp5').fdatepicker()
+					.on('changeDate', function (ev) {
+					if (ev.date.valueOf() < startDate.valueOf()) {
+						$('#alert').show().find('strong').text('The end date can not be less then the start date');
+					} else {
+						$('#alert').hide();
+						endDate = new Date(ev.date);
+						$('#endDate').text($('#dp5').data('date'));
+					}
+					$('#dp5').fdatepicker('hide');
+				});
+				// implementation of disabled form fields
+				var nowTemp = new Date();
+				var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+				var checkin = $('#dpd1').fdatepicker({
+					onRender: function (date) {
+						return date.valueOf() < now.valueOf() ? 'disabled' : '';
+					}
+				}).on('changeDate', function (ev) {
+					if (ev.date.valueOf() > checkout.date.valueOf()) {
+						var newDate = new Date(ev.date)
+						newDate.setDate(newDate.getDate() + 1);
+						checkout.update(newDate);
+					}
+					checkin.hide();
+					$('#dpd2')[0].focus();
+				}).data('datepicker');
+				var checkout = $('#dpd2').fdatepicker({
+					onRender: function (date) {
+						return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+					}
+				}).on('changeDate', function (ev) {
+					checkout.hide();
+				}).data('datepicker');
+			});
+		</script> 
+ FlexSlider  
+<script defer src="js/jquery.flexslider.js"></script> 
+<script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script> 
+
+FREE WALL 
+<script type="text/javascript" src="js/freewall.js"></script> 
+<script type="text/javascript">
+			
+			var colour = [
+				
+			];
+
+			$(".brick").each(function() {
+				this.style.backgroundColor =  colour[colour.length * Math.random() << 0];
+			});
+
+			$(function() {
+				var wall = new freewall("#freewall");
+				wall.reset({
+					selector: '.brick',
+					animate: true,
+					cellW: 160,
+					cellH: 160,
+					onResize: function() {
+						wall.fitWidth();
+					}
+				});
+				wall.addCustomEvent('onBlockLoad', function(setting){
+					console.log(setting);
+				});
+				wall.fitWidth();
+			});
+		</script>
+</body>
+</html>-->

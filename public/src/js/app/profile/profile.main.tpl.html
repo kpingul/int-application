@@ -1,0 +1,29 @@
+<div class="profile_page" add-over-flow data="remove">
+    <section class="slider"> 
+        <!-- 
+            **Warning, bad practice 
+
+            Angulars Flex slider plugin doesn't accept
+            arrays of objects to be iterated within 
+            flex-slide(smiliar to ng-repeat), so, what I did
+            was store the required image url and image description 
+            in a single element and use a javascript expression
+            to split the data needed in order for the slider to take
+            effect as show in ng-href, title, and ng-src attributes
+        -->
+        <flex-slider flex-slide="image in vm.businessAdImages" id="flex-custom">
+            <li>       
+                <a
+                    activate-swipe-box
+                    ng-href="{{image.split(',')[0]}}"
+                    title="{{image.split(',')[1]}}"
+                    class="swipebox"> 
+                    <img ng-src="{{image.split(',')[0]}}" class="img-responsive" alt="{{image.split(',')[1]}}">
+
+                </a>
+            </li>
+        </flex-slider>
+
+
+    </section><!-- end of slider -->
+</div><!-- end of profile-page -->

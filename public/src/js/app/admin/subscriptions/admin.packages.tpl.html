@@ -1,0 +1,226 @@
+
+
+
+        <!-- begin row -->
+        <div class="row"  add-over-flow data="remove">
+            <!-- begin col-12 -->
+            <div class="col-md-12">
+                <!-- begin panel -->
+                <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Packages</h4>
+                    </div>
+                    <div class="panel-body" style="    text-align: center;">
+
+                         <section class="at-pricing bgblack" id="at-pricing">
+
+                    
+                              <div class="col-md-12">
+
+                                <div class="pricing-table" ng-repeat="package in vm.packages track by $index">
+
+                                  <div class="pricing-header clearfix">
+                                    <strong>{{package.type}}</strong>
+                                    <p>${{package.price}}<small>/m</small>
+                                    </p>
+                                  </div>
+                                  <!-- .pricing-header .clearfix -->
+
+                                  <div class="pricing-body clearfix">
+                                    <ul class="clearfix" >
+                                      <li ng-repeat="list in package.features track by $index">
+
+                                        {{list}} <input type="checkbox" ng-if="!list.indexOf('Front')">
+
+                                      </li>
+                                      
+
+                                    </ul>
+                                  </div>
+                                  <!-- .pricing-body .clearfix -->
+
+                                  <div class="pricing-footer">
+                                    <a id="starterHref" href="" ng-click="vm.showModal($index)"><i class="fa fa-shopping-cart"></i> Purchase</a>
+
+                                    <!-- Modal -->
+<div class="modal" ng-attr-id="{{ 'paymentModal-' + $index }}"  role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Purchasing {{vm.packages[$index].type}}</h4>
+      </div>
+      <div class="modal-body">
+       
+
+  
+            <div class="panel panel-default" add-over-flow data="remove">
+              <div class="panel-heading">
+                <h3 class="panel-title" style="color: #333;"><img class="pull-right" style="margin-top:-10px" src="http://i76.imgup.net/accepted_c22e0.png">Payment Details</h3>
+              </div>
+              <div class="panel-body">
+                <form role="form" id="payment-form">
+
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="fullname" placeholder="Full name" required autofocus data-stripe="name" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="phone" placeholder="Phone" required data-stripe="metadata" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input">
+                          <input type="email" class="form-control" name="email" placeholder="Email" required data-stripe="metadata" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="website">Website</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="website" placeholder="Website" data-stripe="metadata" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="desc">Description</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="desc" placeholder="Description" data-stripe="metadata" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="address1">Address</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="address1" placeholder="Address" required data-stripe="address_line1" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <div class="form-group">
+                        <label for="address_city">City</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="address_city" placeholder="City" required data-stripe="address_city" />
+                        </div>
+                      </div>
+                    </div>
+          
+ 
+                    <div class="col-xs-4">
+                      <div class="form-group">
+                        <label for="address_country">Country</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="address_country" placeholder="Country" required data-stripe="address_country" />
+                        </div>
+                      </div>
+                    </div>
+           
+            
+                    <div class="col-xs-4">
+                      <div class="form-group">
+                        <label for="address_zip">Postal Code</label>
+                        <div class="input">
+                          <input type="text" class="form-control" name="address_zip" placeholder="Postal Code" required data-stripe="address_zip" />
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              
+              <div class="row">
+                    <div class="col-xs-12">
+                      <div class="form-group">
+                        <label for="cardNumber">CARD NUMBER</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" name="cardNumber" placeholder="Valid Card Number" required data-stripe="number" />
+                          <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-7 col-md-7">
+                        <label for="expMonth">EXPIRATION DATE</label>
+                      <div class="form-group">
+                        <div class="col-xs-6 col-lg-6 pl-ziro">
+                          <input type="text" class="form-control" name="expMonth" placeholder="MM" required data-stripe="exp_month" />
+                        </div>
+                        <div class="col-xs-6 col-lg-6 pl-ziro">
+                          <input type="text" class="form-control" name="expYear" placeholder="YY" required data-stripe="exp_year" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-xs-5 col-md-5 pull-right">
+                      <div class="form-group">
+                        <label for="cvCode">CV CODE</label>
+                        <input type="password" class="form-control" name="cvCode" placeholder="CV" required data-stripe="cvc" />
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="row" style="display:none;">
+                    <div class="col-xs-12">
+                      <p class="payment-errors"></p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+          
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button class="btn btn-success " type="submit">Start Subscription</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                                  </div>
+                                  <!-- .pricing-footer -->
+
+                                </div>
+                                <!-- .pricing-table -->
+
+                              </div>
+                              <!-- .col-md-12 -->
+                     
+                     
+                        </section>
+
+
+                    </div>
+                </div>
+                <!-- end panel -->
+            </div>
+            <!-- end col-12 -->
+        </div>
+        <!-- end row -->
+
+
