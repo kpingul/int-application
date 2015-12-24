@@ -1,4 +1,4 @@
-iNeedTreez
+INT Application
 ==========
 
 API documentation : http://docs.ineedtreez.apiary.io/
